@@ -10,14 +10,18 @@ const noteSchema = new mongoose.Schema(
       type: String,
       required: true
     },
-    author: {
+    tag: {
+      type: String,
+      required: true
+    },
+    userId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User',
       required: true
     },
-    createdAt: {
-      type: Date,
-      default: Date.now
+    isCompleted: {
+      type: Boolean,
+      required: true
     }
   },
   { timestamps: true }
