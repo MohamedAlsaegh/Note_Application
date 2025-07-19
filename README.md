@@ -34,28 +34,28 @@ Later...
 
 #### ERD
 
-![Smile](image.png)
+![Smile](images/image.png)
 
 ---
 
 ### **_How To Use_**
 
-![Smile](image-1.png)
+![Smile](images/image-1.png)
 The Home Page
 
-![Smile](image-2.png)
+![Smile](images/image-2.png)
 The LogIn Page
 
-![Smile](image-3.png)
+![Smile](images/image-3.png)
 The SignUp Page
 
-![Smile](image-4.png)
+![Smile](images/image-4.png)
 The Title and Descrition of your note
 
-![Smile](image-5.png)
+![Smile](images/image-5.png)
 The profile page
 
-![Smile](image-6.png)
+![Smile](images/image-6.png)
 After LogIn page with all your notes added depending on there title
 
 ---
