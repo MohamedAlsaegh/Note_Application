@@ -6,15 +6,15 @@
 
 #### [GitHub](https://github.com/MohamedAlsaegh/Note_Application) | [Trello](https://trello.com/b/EbSMXIDX/my-trello-board) | [The Project](...)
 
----
-
 ### **_Description_**
+
+---
 
 Note application that record users notes in individual sections, and each user have his own notes based on his log in information
 
----
-
 ### **_Getting Started_**
+
+---
 
 ##### Sign up and sign in as a new user and then begin viewing the different sections of the website.
 
@@ -22,23 +22,23 @@ Note application that record users notes in individual sections, and each user h
 
 ##### The project was deployed and can be viewed [here](......).
 
----
-
 ### **_Technologies Used_**
+
+---
 
 Later...
 
----
-
 ### **_ScreenShots_**
+
+---
 
 #### ERD
 
 ![Smile](images/image.png)
 
----
-
 ### **_How To Use_**
+
+---
 
 ![Smile](images/image-1.png)
 The Home Page
@@ -58,9 +58,21 @@ The profile page
 ![Smile](images/image-6.png)
 After LogIn page with all your notes added depending on there title
 
+### **_Unsolved problems_**
+
 ---
 
+Later...
+
+### **_Future enhancements._**
+
+---
+
+Later...
+
 ### **_Credits_**
+
+---
 
 Later...
 
