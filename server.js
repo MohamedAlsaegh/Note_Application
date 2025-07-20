@@ -27,8 +27,6 @@ app.use(
   })
 )
 
-const authRouter = require(`./routes/authRouter`)
-
 app.get('/', (req, res) => {
   res.send('Your app is connected ... ')
 })
