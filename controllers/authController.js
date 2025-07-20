@@ -25,3 +25,23 @@ exports.auth_signup_post = async (req, res) => {
 exports.auth_signin_get = async (req, res) => {
   res.render(`authController/sign-in.ejs`)
 }
+
+exports.auth_signin_post = async (req, res) => {
+  const userInDatabase = await User.findOne({ username: req.body.username })
+  if (!userInDatabase) {
+    return res.send('Login failed. Please try again')
+  }
+  const validPassword = bcrypt.compareSync(
+    req.body.password,
+    userInDatabase.password
+  )
+  if (!validPassword) {
+    return res.send('Login failed. Please try again')
+  }
+  // User exist and password matched
+  req.session.user = {
+    username: userInDatabase.username,
+    _id: userInDatabase._id
+  }
+  res.redirect('/')
+}
