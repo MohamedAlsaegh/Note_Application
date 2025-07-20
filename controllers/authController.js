@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt')
 // API's
 
 exports.auth_signup_get = async (req, res) => {
-  res.render('authController/sign-up')
+  res.render('./auth/sign-up.ejs')
 }
 
 exports.auth_signup_post = async (req, res) => {
@@ -23,7 +23,7 @@ exports.auth_signup_post = async (req, res) => {
 }
 
 exports.auth_signin_get = async (req, res) => {
-  res.render(`authController/sign-in`)
+  res.render(`./auth/sign-in.ejs`)
 }
 
 exports.auth_signin_post = async (req, res) => {
@@ -49,5 +49,5 @@ exports.auth_signin_post = async (req, res) => {
 
 exports.auth_signout_get = (req, res) => {
   req.session.destroy()
-  res.redirect(`/authController/sign-in`)
+  res.redirect(`./auth/sign-in.ejs`)
 }

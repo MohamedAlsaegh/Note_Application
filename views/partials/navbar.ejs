@@ -1,0 +1,12 @@
+<nav>
+  <a href="/">Home</a>
+  <% if (!user) { %>
+  <a href="/auth/sign-up">Sign Up</a>
+  <a href="/auth/sign-in">Sign In</a>
+  <% } else { %>
+  <a href="/notes">All Recipes</a>
+  <a href="/notes/new">New Recipe</a>
+  <a href="/users/<%= user._id %>">My Profile</a>
+  <a href="/auth/sign-out">Sign Out</a>
+  <% } %>
+</nav>
