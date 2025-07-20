@@ -23,9 +23,13 @@ app.use(
   })
 )
 
+const authRouter = require(`./routes/authRouter`)
+
 app.get('/', (req, res) => {
   res.send('Your app is connected . . . ')
 })
+
+app.use('/authController', authRouter)
 
 app.listen(PORT, () => {
   console.log(`Server runs on Port ${PORT}`)
