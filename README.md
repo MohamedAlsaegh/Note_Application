@@ -41,16 +41,19 @@ Later...
 ### **_How To Use_**
 
 ![Smile](image-1.png)
-The Home Page
+
+In the home page User can create an account or LogIn in existing acount
 
 ![Smile](image-2.png)
+
 The LogIn Page
 
 ![Smile](image-3.png)
+
 The SignUp Page
 
 ![Smile](image-4.png)
-The Title and Descrition of your note
+The Title and Description of your note
 
 ![Smile](image-5.png)
 The profile page
