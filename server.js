@@ -4,9 +4,9 @@ const methodOverride = require('method-override') // To set up the form
 const session = require('express-session') // for authentication
 require('dotenv').config() // To access the .env
 
-// const authRouter = require('./routes/authRouter.js')
+const authRouter = require('./routes/authRouter.js')
 const noteRouter = require('./routes/noteRouter.js')
-// const userRouter = require('./routes/userRouter.js')
+const userRouter = require('./routes/userRouter.js')
 
 // Database Configurations
 const db = require('./database')
@@ -27,14 +27,16 @@ app.use(
   })
 )
 
+const authRouter = require(`./routes/authRouter`)
+
 app.get('/', (req, res) => {
   res.send('Your app is connected ... ')
 })
 
 app.use(express.json())
-// app.use('/auth', authRouter)
+app.use('/auth', authRouter)
 app.use('/notes', noteRouter)
-// app.use('/users', userRouter)
+app.use('/users', userRouter)
 
 app.listen(PORT, () => {
   console.log(`Server runs on Port ${PORT}`)
