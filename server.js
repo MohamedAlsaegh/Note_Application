@@ -28,7 +28,7 @@ app.use(
 )
 
 app.get('/', (req, res) => {
-  res.send('Your app is connected . . . ')
+  res.send('Your app is connected ... ')
 })
 
 app.use(express.json())
