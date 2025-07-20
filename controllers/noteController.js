@@ -26,10 +26,12 @@ const getnoteById = async (req, res) => {
   try {
     const note = await Note.findById(req.params.id)
     console.log(note)
+
     res.send(note) //will be EJS page later
   } catch (error) {
     console.error('An error has occurred getting a note!', error.message)
   }
+
 }
 
 const updateNoteById = async (req, res) => {
