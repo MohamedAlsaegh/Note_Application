@@ -6,7 +6,7 @@ require('dotenv').config() // To access the .env
 
 const authRouter = require('./routes/authRouter.js')
 const noteRouter = require('./routes/noteRouter.js')
-const userRouter = require('./routes/userRouter.js')
+// const userRouter = require('./routes/userRouter.js')
 
 // Database Configurations
 const db = require('./database')
@@ -23,20 +23,21 @@ app.use(
   session({
     secret: process.env.SESSION_SECRET,
     resave: false,
-    saveUninitialized: false // sould be "true" (it was false just for testing)
+    saveUninitialized: true
   })
 )
-
-const authRouter = require(`./routes/authRouter`)
-
-app.get('/', (req, res) => {
-  res.send('Your app is connected ... ')
+app.use((req, res, next) => {
+  res.locals.user = req.session.user
+  next()
 })
 
-app.use(express.json())
+app.get('/', (req, res) => {
+  res.render('index.ejs')
+})
+
 app.use('/auth', authRouter)
 app.use('/notes', noteRouter)
-app.use('/users', userRouter)
+// app.use('/users', userRouter)
 
 app.listen(PORT, () => {
   console.log(`Server runs on Port ${PORT}`)
