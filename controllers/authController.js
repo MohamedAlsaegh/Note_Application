@@ -44,6 +44,7 @@ exports.auth_signin_post = async (req, res) => {
     _id: userInDatabase._id
   }
   res.redirect('/')
+  res.send(`Thanks for signing in, ${user.username}`)
 }
 
 exports.auth_signout_get = (req, res) => {
