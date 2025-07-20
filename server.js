@@ -27,14 +27,18 @@ app.use(
   })
 )
 
-app.get('/', (req, res) => {
-  res.send('Your app is connected ... ')
+app.use((req, res, next) => {
+  res.locals.user = req.session.user
+  next()
 })
 
-app.use(express.json())
+app.get('/', (req, res) => {
+  res.render('index.ejs')
+})
+
 app.use('/auth', authRouter)
 app.use('/notes', noteRouter)
-app.use('/users', userRouter)
+// app.use('/users', userRouter)
 
 app.listen(PORT, () => {
   console.log(`Server runs on Port ${PORT}`)
