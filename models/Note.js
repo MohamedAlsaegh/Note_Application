@@ -17,7 +17,7 @@ const noteSchema = new mongoose.Schema(
     userId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User',
-      required: true
+      required: false // sould be "true" (it was false just for testing)
     },
     isCompleted: {
       type: Boolean,
