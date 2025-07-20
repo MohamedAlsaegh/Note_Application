@@ -6,7 +6,7 @@ require('dotenv').config() // To access the .env
 
 const authRouter = require('./routes/authRouter.js')
 const noteRouter = require('./routes/noteRouter.js')
-const userRouter = require('./routes/userRouter.js')
+// const userRouter = require('./routes/userRouter.js')
 
 // Database Configurations
 const db = require('./database')
@@ -23,7 +23,7 @@ app.use(
   session({
     secret: process.env.SESSION_SECRET,
     resave: false,
-    saveUninitialized: false // sould be "true" (it was false just for testing)
+    saveUninitialized: true
   })
 )
 

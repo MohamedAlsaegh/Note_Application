@@ -5,23 +5,29 @@ const createNote = async (req, res) => {
   try {
     const user = await User.findById(req.body.author)
     const note = await Note.create(req.body)
-    user.recipes.push(note._id) // shoul bbe open
+    user.notes.push(note._id)
     user.save()
-    res.send(note)
+    res.send(note) //will be EJS page later
   } catch (error) {
     console.error('An error has occurred creating a note!', error.message)
-    res.status(500).json({ error: error.message })
   }
 }
 
 const getAllnotes = async (req, res) => {
   try {
-    const noetes = await Note.find({})
-    res.send(notes)
+    const note = await Note.find({})
+    res.send(note) //will be EJS page later
   } catch (error) {
     console.error('Error fetching notes:', error.message)
-    res.status(500).json({ error: error.message })
   }
 }
 
-module.exports = { createNote, getAllnotes }
+const getnoteById = async (req, res) => {
+  try {
+    const note = await Note.findById(req.params.id)
+    console.log(note)
+    res.send(note)
+  } catch (error) {}
+}
+
+module.exports = { createNote, getAllnotes, getnoteById }

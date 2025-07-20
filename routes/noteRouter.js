@@ -7,5 +7,6 @@ const noteController = require('../controllers/noteController.js')
 
 router.post('/', noteController.createNote)
 router.get('/', noteController.getAllnotes)
+router.get('/:id', noteController.getnoteById)
 
 module.exports = router

@@ -1,12 +1,9 @@
 const User = require('../models/User')
 const bcrypt = require('bcrypt')
-
 // API's
-
 exports.auth_signup_get = async (req, res) => {
   res.render('./auth/sign-up.ejs')
 }
-
 exports.auth_signup_post = async (req, res) => {
   const userInDatabase = await User.findOne({ username: req.body.username })
   if (userInDatabase) {
@@ -17,15 +14,12 @@ exports.auth_signup_post = async (req, res) => {
   }
   const hashedPassword = bcrypt.hashSync(req.body.password, 10)
   req.body.password = hashedPassword
-
   const user = await User.create(req.body)
   res.send(`Thanks for signing up, ${user.username}`)
 }
-
 exports.auth_signin_get = async (req, res) => {
   res.render(`./auth/sign-in.ejs`)
 }
-
 exports.auth_signin_post = async (req, res) => {
   const userInDatabase = await User.findOne({ username: req.body.username })
   if (!userInDatabase) {
@@ -46,7 +40,6 @@ exports.auth_signin_post = async (req, res) => {
   res.redirect('/')
   res.send(`Thanks for signing in, ${user.username}`)
 }
-
 exports.auth_signout_get = (req, res) => {
   req.session.destroy()
   res.redirect(`./auth/sign-in.ejs`)
