@@ -26,7 +26,7 @@ const getnoteById = async (req, res) => {
   try {
     const note = await Note.findById(req.params.id)
     console.log(note)
-    res.send(note)
+    res.render('notes/show.ejs', { user: req.session.user, note })
   } catch (error) {}
 }
 
