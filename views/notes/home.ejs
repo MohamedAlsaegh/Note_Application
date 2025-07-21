@@ -1,0 +1,23 @@
+<%- include('../partials/navbar') %>
+
+<div class="home">
+  <h1>📒 Welcome to Your Notes Dashboard, <%= user.username %>!</h1>
+  <p>
+    This space is all yours — jot ideas, organize thoughts, and keep track of
+    what matters.
+  </p>
+
+  <section class="tutorial">
+    <h2>🧭 How to Use This App</h2>
+    <ol>
+      <li>Create a new note from the dashboard</li>
+      <li>Edit or delete notes anytime</li>
+      <li>Tag notes by topic or category</li>
+      <li>Access your profile to update bio and picture</li>
+    </ol>
+  </section>
+
+  <div class="actions">
+    <a href="/notes/show" class="btn">📂 View Your Notes</a>
+  </div>
+</div>
