@@ -17,6 +17,7 @@ exports.auth_signup_post = async (req, res) => {
   const user = await User.create(req.body)
   res.redirect('/auth/sign-in')
 }
+
 exports.auth_signin_get = async (req, res) => {
   res.render(`./auth/sign-in.ejs`)
 }
