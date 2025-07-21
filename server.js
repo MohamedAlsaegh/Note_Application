@@ -6,7 +6,7 @@ require('dotenv').config() // To access the .env
 const isSignedIn = require('./middleware/is-signed-in')
 const authRouter = require('./routes/authRouter.js')
 const noteRouter = require('./routes/noteRouter.js')
-// const userRouter = require('./routes/userRouter.js')
+const userRouter = require('./routes/userRouter.js')
 
 // Database Configurations
 const db = require('./database')
@@ -23,6 +23,7 @@ app.use(logger('dev'))
 app.use(express.json()) // Parses incoming requests
 app.use(express.urlencoded({ extended: false })) // Parses URL-encoded data
 app.use(methodOverride('_method'))
+app.use(isSignedIn)
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
@@ -42,8 +43,9 @@ app.get('/', (req, res) => {
 
 app.use('/auth', authRouter)
 app.use('/notes', noteRouter)
-// app.use('/users', userRouter)
+app.use('/users', userRouter)
 app.use(isSignedIn)
+
 
 app.listen(PORT, () => {
   console.log(`Server runs on Port ${PORT}`)
