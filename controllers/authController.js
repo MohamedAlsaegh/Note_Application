@@ -15,8 +15,9 @@ exports.auth_signup_post = async (req, res) => {
   const hashedPassword = bcrypt.hashSync(req.body.password, 10)
   req.body.password = hashedPassword
   const user = await User.create(req.body)
-  res.send(`Thanks for signing up, ${user.username}`)
+  res.redirect('/auth/sign-in')
 }
+
 exports.auth_signin_get = async (req, res) => {
   res.render(`./auth/sign-in.ejs`)
 }
