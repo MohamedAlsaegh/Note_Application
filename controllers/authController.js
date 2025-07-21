@@ -26,6 +26,7 @@ exports.auth_signin_post = async (req, res) => {
   if (!userInDatabase) {
     return res.send('Login failed. Please try again')
   }
+
   const validPassword = bcrypt.compareSync(
     req.body.password,
     userInDatabase.password
@@ -33,15 +34,15 @@ exports.auth_signin_post = async (req, res) => {
   if (!validPassword) {
     return res.send('Login failed. Please try again')
   }
-  // User exist and password matched
+
   req.session.user = {
     username: userInDatabase.username,
     _id: userInDatabase._id
   }
+
   res.redirect('/notes/show')
-  res.send(`Thanks for signing in, ${user.username}`)
 }
 exports.auth_signout_get = (req, res) => {
   req.session.destroy()
-  res.redirect(`./auth/sign-in.ejs`)
+  res.redirect(`/auth/sign-in`)
 }

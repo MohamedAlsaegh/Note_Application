@@ -1,5 +1,5 @@
 <nav>
-  <a href="/">Home</a>
+  <a href="<%= user ? '/notes/home' : '/' %>">Home</a>
   <% if (!user) { %>
   <a href="/auth/sign-up">Sign Up</a>
   <a href="/auth/sign-in">Sign In</a>
