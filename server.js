@@ -3,10 +3,10 @@ const logger = require('morgan') //Morgan for logging
 const methodOverride = require('method-override') // To set up the form
 const session = require('express-session') // for authentication
 require('dotenv').config() // To access the .env
-const isSignedIn = require ('./middleware/is-signed-in')
+const isSignedIn = require('./middleware/is-signed-in')
 const authRouter = require('./routes/authRouter.js')
 const noteRouter = require('./routes/noteRouter.js')
-const userRouter = require('./routes/userRouter.js')
+// const userRouter = require('./routes/userRouter.js')
 
 // Database Configurations
 const db = require('./database')
@@ -42,7 +42,7 @@ app.get('/', (req, res) => {
 
 app.use('/auth', authRouter)
 app.use('/notes', noteRouter)
-app.use('/users', userRouter)
+// app.use('/users', userRouter)
 app.use(isSignedIn)
 
 app.listen(PORT, () => {

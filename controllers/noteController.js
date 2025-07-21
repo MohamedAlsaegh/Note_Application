@@ -3,16 +3,24 @@ const Note = require('../models/Note.js')
 
 const createNote = async (req, res) => {
   try {
-    const user = await User.findById(req.body.author)
+    req.body.isCompleted = !!req.body.isCompleted
+    req.body.tag = req.body.tag?.trim().toLowerCase()
+
+    const user = await User.findById(req.body.userId)
+    if (!user) {
+      return res.status(404).send('User not found')
+    }
+
     const note = await Note.create(req.body)
+    user.notes = user.notes || []
     user.notes.push(note._id)
-    user.save()
-    res.send(note) //will be EJS page later
+    await user.save()
+
+    res.redirect('/notes/show')
   } catch (error) {
     console.error('An error has occurred creating a note!', error.message)
   }
 }
-
 const getAllnotes = async (req, res) => {
   try {
     const note = await Note.find({})
@@ -35,19 +43,19 @@ const getnoteById = async (req, res) => {
 
 const updateNoteById = async (req, res) => {
   try {
-    const note = await Note.findByIdAndUpdate(req.params.id, req.body, {
-      new: true
-    })
-    res.send(note) //will be EJS page later
+    req.body.isCompleted = !!req.body.isCompleted
+    req.body.tag = req.body.tag.trim().toLowerCase()
+    await Note.findByIdAndUpdate(req.params.id, req.body, { new: true })
+    res.redirect('/notes/show')
   } catch (error) {
-    console.error('An error has occurred updating a note!', error.message)
+    console.error('Note update error:', error.message)
   }
 }
 
 const deleteNoteById = async (req, res) => {
-  await Note.findByIdAndDelete(req.params.id)
-  res.send(`Note with ID ${req.params.id} has been deleted successfully!`) //will be EJS page later
   try {
+    await Note.findByIdAndDelete(req.params.id)
+    res.redirect('/notes/show')
   } catch (error) {
     console.error('An error has occurred deleting a note!', error.message)
   }
@@ -76,7 +84,15 @@ const note_show_get = async (req, res) => {
     })
   } catch (error) {
     console.error('Error loading show page:', error.message)
-    res.status(500).send('Something went wrong')
+  }
+}
+
+const noteEdit = async (req, res) => {
+  try {
+    const note = await Note.findById(req.params.id)
+    res.render('notes/edit', { note })
+  } catch (error) {
+    console.error('Error loading edit page:', error.message)
   }
 }
 
@@ -86,5 +102,6 @@ module.exports = {
   getnoteById,
   updateNoteById,
   deleteNoteById,
-  note_show_get
+  note_show_get,
+  noteEdit
 }
