@@ -17,3 +17,11 @@ app.post('/profile', upload.single('image'), function (req, res, next) {
     console.log(req.file)
     return res.redirect('/')
 })
+const router = express.Router()
+
+const userController = require('../controllers/userController.js')
+
+router.put('/:id', userController.updateUserData)
+
+module.exports = router
+

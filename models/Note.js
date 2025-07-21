@@ -20,8 +20,7 @@ const noteSchema = new mongoose.Schema(
       required: false // sould be "true" (it was false just for testing)
     },
     isCompleted: {
-      type: Boolean,
-      required: true
+      type: Boolean
     }
   },
   { timestamps: true }
