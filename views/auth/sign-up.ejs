@@ -1,6 +1,6 @@
 <%- include('../partials/navbar.ejs') %>
 
-<h1>Create A Anew Account</h1>
+<!-- <h1>Create A Anew Account</h1>
 
 <form action="/auth/sign-up" method="post">
   <label for="username">Username: </label>
@@ -11,6 +11,27 @@
   <br />
   <label for="confirmPassword">Confirm Password</label>
   <input type="password" name="confirmPassword" id="confirmPassword" />
+  <br />
+  <button type="submit">Sign Up</button>
+</form> -->
+
+<h2>Sign Up</h2>
+<form action="/auth/sign-up" method="POST">
+  <input type="text" name="username" id="username" placeholder="Username" />
+  <br />
+  <input type="text" name="about" id="about" placeholder="About You" />
+  <br />
+
+  <input type="password" name="password" placeholder="Password" required />
+  <br />
+  <input
+    type="password"
+    name="confirmPassword"
+    placeholder="Confirm Password"
+    required
+  />
+  <br />
+  <input type="text" name="picture" placeholder="Profile Picture URL" />
   <br />
   <button type="submit">Sign Up</button>
 </form>

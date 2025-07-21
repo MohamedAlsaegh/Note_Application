@@ -53,10 +53,38 @@ const deleteNoteById = async (req, res) => {
   }
 }
 
+const note_show_get = async (req, res) => {
+  try {
+    if (!req.session.user) {
+      return res.redirect('/auth/sign-in')
+    }
+
+    const user = await User.findById(req.session.user._id)
+    const allTags = await Note.distinct('tag')
+
+    const taggedNotes = await Promise.all(
+      allTags.map(async (tag) => {
+        const notes = await Note.find({ tag })
+        return { tag, notes }
+      })
+    )
+
+    res.render('notes/show', {
+      user,
+      allTags,
+      taggedNotes
+    })
+  } catch (error) {
+    console.error('Error loading show page:', error.message)
+    res.status(500).send('Something went wrong')
+  }
+}
+
 module.exports = {
   createNote,
   getAllnotes,
   getnoteById,
   updateNoteById,
-  deleteNoteById
+  deleteNoteById,
+  note_show_get
 }
