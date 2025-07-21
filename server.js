@@ -6,7 +6,7 @@ require('dotenv').config() // To access the .env
 
 const authRouter = require('./routes/authRouter.js')
 const noteRouter = require('./routes/noteRouter.js')
-// const userRouter = require('./routes/userRouter.js')
+const userRouter = require('./routes/userRouter.js')
 
 // Database Configurations
 const db = require('./database')
@@ -38,7 +38,7 @@ app.get('/', (req, res) => {
 
 app.use('/auth', authRouter)
 app.use('/notes', noteRouter)
-// app.use('/users', userRouter)
+app.use('/users', userRouter)
 
 app.listen(PORT, () => {
   console.log(`Server runs on Port ${PORT}`)
