@@ -1,0 +1,41 @@
+<%- include('../partials/navbar') %>
+
+<div class="main">
+  <div class="note">
+    <form action="/notes" method="POST">
+      <input type="text" name="title" placeholder="Title" required />
+      <textarea
+        name="description"
+        placeholder="Description"
+        rows="4"
+        required
+      ></textarea>
+
+      <select name="tag" required>
+        <% allTags.forEach(tag => { %>
+        <option value="<%= tag %>"><%= tag %></option>
+        <% }) %>
+      </select>
+
+      <input type="hidden" name="author" value="<%= user._id %>" />
+      <button type="submit">Add</button>
+    </form>
+  </div>
+
+  <div class="tag-columns">
+    <% taggedNotes.slice(0, 4).forEach(section => { %>
+    <div class="tag-box">
+      <h3><%= section.tag %></h3>
+      <% if (section.notes.length > 0) { %> <% section.notes.forEach(note => {
+      %>
+      <div class="note-card">
+        <h4><%= note.title %></h4>
+        <p><%= note.description %></p>
+      </div>
+      <% }) %> <% } else { %>
+      <p>No notes yet under this tag.</p>
+      <% } %>
+    </div>
+    <% }) %>
+  </div>
+</div>

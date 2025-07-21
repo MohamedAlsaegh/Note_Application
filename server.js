@@ -14,6 +14,10 @@ const db = require('./database')
 const PORT = process.env.PORT ? process.env.PORT : 3000 //port set up
 
 const app = express()
+const path = require('path')
+
+app.set('view engine', 'ejs')
+app.set('views', path.join(__dirname, 'views'))
 
 app.use(logger('dev'))
 app.use(express.json()) // Parses incoming requests
