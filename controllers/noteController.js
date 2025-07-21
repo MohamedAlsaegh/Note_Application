@@ -3,7 +3,7 @@ const Note = require('../models/Note.js')
 
 const createNote = async (req, res) => {
   try {
-    const user = await User.findById(req.body.author)
+    const user = await User.findById(req.body.userId)
     const note = await Note.create(req.body)
     user.notes.push(note._id)
     user.save()
@@ -79,11 +79,21 @@ const note_show_get = async (req, res) => {
   }
 }
 
+const noteEdit = async (req, res) => {
+  try {
+    const note = await Note.findById(req.params.id)
+    res.render('notes/edit', { note })
+  } catch (error) {
+    console.error('Error loading edit page:', error.message)
+  }
+}
+
 module.exports = {
   createNote,
   getAllnotes,
   getnoteById,
   updateNoteById,
   deleteNoteById,
-  note_show_get
+  note_show_get,
+  noteEdit
 }
