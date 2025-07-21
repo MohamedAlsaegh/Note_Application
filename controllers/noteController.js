@@ -31,7 +31,6 @@ const getnoteById = async (req, res) => {
   } catch (error) {
     console.error('An error has occurred getting a note!', error.message)
   }
-
 }
 
 const updateNoteById = async (req, res) => {
