@@ -4,9 +4,10 @@
   <div class="note">
     <form action="/notes" method="POST">
       <input type="text" name="title" placeholder="Title" required />
+
       <textarea
-        name="description"
-        placeholder="Description"
+        name="content"
+        placeholder="Content"
         rows="4"
         required
       ></textarea>
@@ -17,23 +18,33 @@
         <% }) %>
       </select>
 
-      <input type="hidden" name="author" value="<%= user._id %>" />
+      <label>
+        <input type="checkbox" name="isCompleted" />
+        Mark as completed
+      </label>
+
+      <input type="hidden" name="userId" value="<%= user._id %>" />
       <button type="submit">Add</button>
     </form>
   </div>
 
-  <div class="tag-columns">
-    <% taggedNotes.slice(0, 4).forEach(section => { %>
+  <div class="notes-by-tag">
+    <% taggedNotes.forEach(section => { %>
     <div class="tag-box">
       <h3><%= section.tag %></h3>
-      <% if (section.notes.length > 0) { %> <% section.notes.forEach(note => {
-      %>
-      <div class="note-card">
-        <h4><%= note.title %></h4>
-        <p><%= note.description %></p>
-      </div>
-      <% }) %> <% } else { %>
-      <p>No notes yet under this tag.</p>
+
+      <% if (section.notes.length > 0) { %>
+      <ul>
+        <% section.notes.forEach(note => { %>
+        <li>
+          <a href="/notes/<%= note._id %>" class="note-title-link">
+            <%= note.title %>
+          </a>
+        </li>
+        <% }) %>
+      </ul>
+      <% } else { %>
+      <p>No notes under this tag yet.</p>
       <% } %>
     </div>
     <% }) %>

@@ -76,7 +76,6 @@ const note_show_get = async (req, res) => {
     })
   } catch (error) {
     console.error('Error loading show page:', error.message)
-    res.status(500).send('Something went wrong')
   }
 }
 

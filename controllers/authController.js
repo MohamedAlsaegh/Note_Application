@@ -37,7 +37,7 @@ exports.auth_signin_post = async (req, res) => {
     username: userInDatabase.username,
     _id: userInDatabase._id
   }
-  res.redirect('/')
+  res.redirect('/notes/show')
   res.send(`Thanks for signing in, ${user.username}`)
 }
 exports.auth_signout_get = (req, res) => {
