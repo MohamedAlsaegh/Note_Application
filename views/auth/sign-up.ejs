@@ -1,7 +1,7 @@
 <%- include('../partials/navbar.ejs') %>
 
 <h2>Sign Up</h2>
-<form action="/auth/sign-up" method="POST" enctype="multipart/form-data">
+<form action="/auth/sign-up" method="POST">
   <input type="text" name="username" id="username" placeholder="Username" />
   <br />
   <input type="text" name="about" id="about" placeholder="About You" />
@@ -17,9 +17,7 @@
   />
   <br />
 
-
   <input type="file" name="image" accept="image/*" />
-
 
   <br />
   <button type="submit">Sign Up</button>
