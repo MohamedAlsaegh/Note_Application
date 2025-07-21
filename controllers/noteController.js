@@ -3,16 +3,19 @@ const Note = require('../models/Note.js')
 
 const createNote = async (req, res) => {
   try {
+    req.body.isCompleted = !!req.body.isCompleted
+    req.body.tag = req.body.tag.trim().toLowerCase()
+
     const user = await User.findById(req.body.userId)
     const note = await Note.create(req.body)
     user.notes.push(note._id)
-    user.save()
-    res.send(note) //will be EJS page later
+    await user.save()
+
+    res.redirect('/notes/show')
   } catch (error) {
     console.error('An error has occurred creating a note!', error.message)
   }
 }
-
 const getAllnotes = async (req, res) => {
   try {
     const note = await Note.find({})
@@ -35,12 +38,12 @@ const getnoteById = async (req, res) => {
 
 const updateNoteById = async (req, res) => {
   try {
-    const note = await Note.findByIdAndUpdate(req.params.id, req.body, {
-      new: true
-    })
-    res.send(note) //will be EJS page later
+    req.body.isCompleted = !!req.body.isCompleted
+    req.body.tag = req.body.tag.trim().toLowerCase()
+    await Note.findByIdAndUpdate(req.params.id, req.body, { new: true })
+    res.redirect('/notes/show')
   } catch (error) {
-    console.error('An error has occurred updating a note!', error.message)
+    console.error('Note update error:', error.message)
   }
 }
 
