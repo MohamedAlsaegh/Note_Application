@@ -4,10 +4,15 @@ const Note = require('../models/Note.js')
 const createNote = async (req, res) => {
   try {
     req.body.isCompleted = !!req.body.isCompleted
-    req.body.tag = req.body.tag.trim().toLowerCase()
+    req.body.tag = req.body.tag?.trim().toLowerCase()
 
     const user = await User.findById(req.body.userId)
+    if (!user) {
+      return res.status(404).send('User not found')
+    }
+
     const note = await Note.create(req.body)
+    user.notes = user.notes || []
     user.notes.push(note._id)
     await user.save()
 
@@ -48,9 +53,9 @@ const updateNoteById = async (req, res) => {
 }
 
 const deleteNoteById = async (req, res) => {
-  await Note.findByIdAndDelete(req.params.id)
-  res.send(`Note with ID ${req.params.id} has been deleted successfully!`) //will be EJS page later
   try {
+    await Note.findByIdAndDelete(req.params.id)
+    res.redirect('/notes/show')
   } catch (error) {
     console.error('An error has occurred deleting a note!', error.message)
   }
