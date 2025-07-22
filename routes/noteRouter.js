@@ -8,10 +8,6 @@ const noteController = require('../controllers/noteController.js')
 router.get('/home', isSignedIn, (req, res) => {
   res.render('notes/home', { user: req.session.user })
 })
-router.get('/:id/edit', async (req, res) => {
-  const note = await Note.findById(req.params.id)
-  res.render('notes/edit', { note })
-})
 
 router.post('/', noteController.createNote)
 router.get('/', noteController.getAllnotes)

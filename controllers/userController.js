@@ -2,6 +2,10 @@ const User = require('../models/User.js')
 
 const getUserById = async (req, res) => {
   try {
+    if (req.params.id !== req.session.user._id.toString()) {
+      return res.status(403).send('Unauthorized access')
+    }
+
     const user = await User.findById(req.params.id)
 
     if (!user) {
