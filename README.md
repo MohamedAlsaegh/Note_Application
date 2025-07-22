@@ -1,16 +1,19 @@
 # Project MindNote
 
-## Date: 17/7/2025
+💻 **GitHub Repository**: [Note Application on GitHub](https://github.com/MohamedAlsaegh/Note_Application)
 
-### Made By: Mohamed Alsaegh | Qassim Moahammed | Fawaz Ahmed
+🗂️ **Project Planning Board** (Trello): [MindNote Planning Board](https://trello.com/invite/b/6878e9e50aaedd6c404cb7cc/ATTIf5e69d48a9f88dc3cd4138e545580463BC2D6BF9/mindnote)
 
-#### [GitHub](https://github.com/MohamedAlsaegh/Note_Application) | [Trello](https://trello.com/b/EbSMXIDX/my-trello-board) | [MindNote](...)
+🚀**Live Demo**: [Try MindNote](...)
 
-### **_Description_**
+## 📝 Description
 
----
+**MindNote** is a full-stack web application that helps users capture, organize, and manage their thoughts through a clean and intuitive interface.  
+Each user can create personal notes, assign them to categories (tags), and track them through various stages.
 
-MindNote is a full-stack web application designed to help users organize their thoughts and ideas into personalized note sections. Each user's notes are stored securely and displayed only upon login, making this a powerful and intuitive note management tool for everyday use.
+Notes are stored securely in a database and are only visible to the authenticated user, ensuring privacy and data integrity.
+
+Whether you're jotting down quick reminders, organizing tasks, or planning long-term goals, **MindNote** provides a user-friendly workspace to keep your ideas structured and accessible anytime.
 
 ### **_Getting Started_**
 
