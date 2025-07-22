@@ -20,6 +20,7 @@ const path = require('path')
 
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views'))
+app.use(express.static('public'))
 
 app.use(logger('dev'))
 app.use(express.json()) // Parses incoming requests
@@ -46,8 +47,8 @@ app.get('/', (req, res) => {
 })
 
 app.use('/auth', authRouter)
-app.use('/notes', noteRouter)
-app.use('/users', userRouter)
+app.use('/notes', isSignedIn ,noteRouter)
+app.use('/users', isSignedIn , userRouter)
 
 app.listen(PORT, () => {
   console.log(`Server runs on Port ${PORT}`)
