@@ -1,11 +1,5 @@
 # Project MindNote
 
-💻 **GitHub Repository**: [Note Application on GitHub](https://github.com/MohamedAlsaegh/Note_Application)
-
-🗂️ **Project Planning Board** (Trello): [MindNote Planning Board](https://trello.com/invite/b/6878e9e50aaedd6c404cb7cc/ATTIf5e69d48a9f88dc3cd4138e545580463BC2D6BF9/mindnote)
-
-🚀**Live Demo**: [Try MindNote](...)
-
 ## 📝 Description
 
 **MindNote** is a full-stack web application that helps users capture, organize, and manage their thoughts through a clean and intuitive interface.  
@@ -15,25 +9,47 @@ Notes are stored securely in a database and are only visible to the authenticate
 
 Whether you're jotting down quick reminders, organizing tasks, or planning long-term goals, **MindNote** provides a user-friendly workspace to keep your ideas structured and accessible anytime.
 
-### **_Getting Started_**
+## 📋 Table of Contents
 
----
+- [📝 Description](#-description)
+- [📋 Table of Contents](#-table-of-contents)
+- [🚀 Getting Started](#-getting-started)
+- [🔗 Project Links](#-getting-started)
+- [🛠️ Technologies Used](#-technologies-used)
+- [📊 ERD](#-erd)
+  - [Entities](#entities)
+  - [Relationship](#relationship)
+- [🖼️ Wireframes](#-wireframe)
+  - [The Home Page](#the-home-page)
+  - [The SignUp Page](#the-signup-page)
+  - [The LogIn Page](#the-login-page)
+  - [The Note Page](#the-note-page)
+  - [All Notes Page](#all-notes-page)
+  - [The Profile Page](#the-profile-page)
+- [🐞 Unsolved Problems](#-unsolved-problems)
+- [✨ Future Enhancements](#-future-enhancements)
+- [🙌 Credits](#-credits)
+- [👤 Authors (Developed by)](#-authors-developed-by)
+  - [Mohamed Alsaegh](#mohamed-alsaegh)
+  - [Fawaz Aljar](#fawaz-aljar)
+  - [Qassim Alderazi](#qassim-alderazi)
 
-Sign Up as a new user.
+## 🚀 Getting Started
 
-Sign In to access your personalized notes dashboard.
+Follow these steps to start using **MindNote**:
 
-Create, view, and manage your notes by category and title.
+1. **Sign Up** to create a new user account.
+2. **Sign In** to access your personalized notes dashboard.
+3. **Create, view, and manage notes** using titles, descriptions, and tags.
+4. Your session is **secure**, and all your data is **private and user-specific**.
 
-Your session is secure, and your data is isolated from others.
+🔗 **Live App**: [Try MindNote](...)
 
-Visit the deployed project: [MindNote] ()
+💻 **GitHub Repository**: [Note Application on GitHub](https://github.com/MohamedAlsaegh/Note_Application)
 
-Explore our development process on [Trello] ()
+🗂️ **Project Planning Board** (Trello): [MindNote Planning Board](https://trello.com/invite/b/6878e9e50aaedd6c404cb7cc/ATTIf5e69d48a9f88dc3cd4138e545580463BC2D6BF9/mindnote)
 
 ## 🛠️ Technologies Used
-
----
 
 - `**Node.js**` & `**Express.js**` : Server-side JavaScript runtime and web framework for handling routing and server logic.
 
@@ -162,27 +178,13 @@ This page allows users to personalize and maintain their profile as needed.
 
 ---
 
-Later...
-
 ## **_Future enhancements._**
 
 ---
 
-Implement search functionality across notes
-
-Allow users to tag and color-code notes
-
 ## **_Credits_**
 
 ---
-
-This project was developed collaboratively by:
-
-Mohamed Alsaegh
-
-Qassim Mohammed
-
-Fawaz Ahmed
 
 # 👤 Authors (Developed by)
 
