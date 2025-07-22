@@ -4,59 +4,84 @@
 
 ### Made By: Mohamed Alsaegh | Qassim Moahammed | Fawaz Ahmed
 
-#### [GitHub](https://github.com/MohamedAlsaegh/Note_Application) | [Trello](https://trello.com/b/EbSMXIDX/my-trello-board) | [The Project](...)
+#### [GitHub](https://github.com/MohamedAlsaegh/Note_Application) | [Trello](https://trello.com/b/EbSMXIDX/my-trello-board) | [MindNote](...)
 
 ### **_Description_**
 
 ---
 
-Note application that record users notes in individual sections, and each user have his own notes based on his log in information
+MindNote is a full-stack web application designed to help users organize their thoughts and ideas into personalized note sections. Each user's notes are stored securely and displayed only upon login, making this a powerful and intuitive note management tool for everyday use.
 
 ### **_Getting Started_**
 
 ---
 
-##### Sign up and sign in as a new user and then begin viewing the different sections of the website.
+Sign Up as a new user.
 
-##### A Trello board was used to keep track of development progress and can be viewed [here](Uttps://trello.com/b/EbSMXIDX/my-trello-board).
+Sign In to access your personalized notes dashboard.
 
-##### The project was deployed and can be viewed [here](......).
+Create, view, and manage your notes by category and title.
+
+Your session is secure, and your data is isolated from others.
+
+Visit the deployed project: [MindNote] ()
+
+Explore our development process on [Trello] ()
 
 ### **_Technologies Used_**
 
 ---
 
-Later...
+Node.js & Express.js
+
+MongoDB & Mongoose
+
+EJS Templating Engine
+
+Multer (for image uploads)
+
+Sessions and Authentication Middleware
+
+CSS for front-end interactions
 
 ### **_ScreenShots_**
 
 ---
 
-#### ERD
-
 ![Smile](images/image.png)
-
-### **_How To Use_**
+ERD
 
 ---
 
 ![Smile](images/image-1.png)
 The Home Page
 
+---
+
 ![Smile](images/image-2.png)
 The LogIn Page
+
+---
 
 ![Smile](images/image-3.png)
 The SignUp Page
 
+---
+
 ![Smile](images/image-4.png)
-The Title and Descrition of your note
+Managing your note
+
+---
 
 ![Smile](images/image-5.png)
 The profile page
 
+---
+
 ![Smile](images/image-6.png)
-After LogIn page with all your notes added depending on there title
+The Main Notes View Page
+
+---
 
 ### **_Unsolved problems_**
 
@@ -68,12 +93,20 @@ Later...
 
 ---
 
-Later...
+Implement search functionality across notes
+
+Allow users to tag and color-code notes
 
 ### **_Credits_**
 
 ---
 
-Later...
+This project was developed collaboratively by:
+
+Mohamed Alsaegh
+
+Qassim Mohammed
+
+Fawaz Ahmed
 
 ---
