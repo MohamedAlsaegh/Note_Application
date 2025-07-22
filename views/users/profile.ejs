@@ -20,13 +20,23 @@
         value="<%= user.username %>"
         placeholder="your name"
       />
-      <input
+      <!-- <input
         type="text"
         name="about"
         id="about"
-        value="<%= user.about %>"
+        value="  user.about "
         placeholder="about you"
-      />
+      /> -->
+      <textarea
+        name="about"
+        placeholder="About me"
+        id="about"
+        rows="4"
+        required
+      >
+<%= user.about %></textarea
+      >
+
       <input type="file" name="image" />
       <button type="submit">Save</button>
     </form>
