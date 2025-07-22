@@ -174,34 +174,37 @@ Features include:
 
 This page allows users to personalize and maintain their profile as needed.
 
-## **_Unsolved problems_**
+## **🐞 Unsolved Problems**
 
----
+- No password reset functionality.
+- No validation feedback for weak passwords.
+- Session timeout handling not implemented yet.
 
-## **_Future enhancements._**
+## **✨ Possible Future Enhancements**
 
----
+- Add support for rich-text editing (bold, lists, links) in note content.
+- Implement note recovery (trash bin).
+- Add user notifications (e.g., "Note saved successfully").
+- Integrate dark mode toggle.
+- Improve mobile responsiveness with a fully adaptive layout.
 
-## **_Credits_**
+## **🙌 Credits**
 
----
+- Special thanks to our project supervisor [Saad Iqbal](https://www.linkedin.com/in/saad-iqbal-6623a262/) for guidance and feedback.
+- Icons and illustrations by [Flaticon](https://www.flaticon.com/).
+- [MongoDB Docs](https://www.mongodb.com/docs/) and [MDN Web Docs](https://developer.mozilla.org/) for technical references.
+- Team brainstorming and task management via [Trello](https://trello.com/).
 
 # 👤 Authors (Developed by)
 
 ### Mohamed Alsaegh
 
----
-
 📫 Email: [mad6717@gmail.com](mailto:mad6717@gmail.com) | 🔗 GitHub: [MohamedAlsaegh](https://github.com/MohamedAlsaegh) | 💼 LinkedIn: [Mohamed Alsaegh](https://www.linkedin.com/in/mohamed-alsaegh-304ab31a3/)
 
 ### Fawaz Aljar
 
----
-
 📫 Email: [faaljar2@gmail.com](mailto:faaljar2@gmail.com) | 🔗 GitHub: [Fawaz Aljar](https://github.com/10Fawaz) | 💼 LinkedIn: [Fawaz Aljar](https://www.linkedin.com/in/fawaz-aljar-77900a36a/)
 
 ### Qassim Alderazi
-
----
 
 📫 Email: [Qm8222606@gmail.com](mailto:Qm8222606@gmail.com) | 🔗 GitHub: [Qassim Alderazi](https://github.com/MohamedAlsaegh) | 💼 LinkedIn: [Qassim Alderazi](https://www.linkedin.com/in/qassim-alderazi-0111402b5/)
