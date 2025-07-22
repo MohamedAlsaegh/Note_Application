@@ -46,8 +46,6 @@ Explore our development process on [Trello] ()
 
 # **_ERD_**
 
----
-
 ![Smile](images/image.png)
 The ERD consists of two main entities: **User** and **Notes**, structured to manage users and their personal notes efficiently.
 
@@ -91,14 +89,9 @@ The Home Page is the first screen the user sees upon visiting the application. F
 
 This page acts as the gateway for users to access the app’s features by guiding them through the authentication process.
 
----
-
 ## The SignUp Page
 
-![Smile](images/image-3.png)
-
-<!-- image need updating -->
-
+![Smile](images/image-3.png)<!-- image need updating -->
 On the SignUp page, users can create a new account by entering the following information:
 
 - **Username**
@@ -110,35 +103,37 @@ On the SignUp page, users can create a new account by entering the following inf
 If all inputs are valid and the username is available, the user will be redirected to the SignIn page.  
 If the username is already taken or there are other errors, an appropriate message will be displayed to inform the user.
 
----
+## The LogIn Page
 
-The LogIn Page
 ![Smile](images/image-2.png)
+On the LogIn page, users enter their **Username** and **Password** to access their account.  
+If the credentials are correct, the user is redirected to the **Notes** page (showing all notes).  
+If the login fails, an error message is displayed:  
+**"Login failed. Please try again."**
 
----
+## Managing your note
 
-Managing your note
 ![Smile](images/image-4.png)
 
 ---
 
-The profile page
-![Smile](images/image-5.png)
+## The Main Notes View Page
 
----
-
-The Main Notes View Page
 ![Smile](images/image-6.png)
 
 ---
 
-### **_Unsolved problems_**
+## The profile page
+
+![Smile](images/image-5.png)
+
+## **_Unsolved problems_**
 
 ---
 
 Later...
 
-### **_Future enhancements._**
+## **_Future enhancements._**
 
 ---
 
@@ -146,7 +141,7 @@ Implement search functionality across notes
 
 Allow users to tag and color-code notes
 
-### **_Credits_**
+## **_Credits_**
 
 ---
 
