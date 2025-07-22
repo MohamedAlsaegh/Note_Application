@@ -92,6 +92,7 @@ This page acts as the gateway for users to access the app’s features by guidin
 ## The SignUp Page
 
 ![Smile](images/image-3.png)<!-- image need updating -->
+
 On the SignUp page, users can create a new account by entering the following information:
 
 - **Username**
@@ -106,26 +107,53 @@ If the username is already taken or there are other errors, an appropriate messa
 ## The LogIn Page
 
 ![Smile](images/image-2.png)
+
 On the LogIn page, users enter their **Username** and **Password** to access their account.  
 If the credentials are correct, the user is redirected to the **Notes** page (showing all notes).  
 If the login fails, an error message is displayed:  
 **"Login failed. Please try again."**
 
-## Managing your note
+## The Note Page
 
 ![Smile](images/image-4.png)
 
----
+This page is dedicated to opening and managing a single note.
 
-## The Main Notes View Page
+Users can:
+
+- **View** the full content of the selected note.
+- **Edit** the note's **Title** and **Description**.
+- **Save** changes made to the note individually.
+
+This page allows users to focus on and manage each note in detail.
+
+## All Notes page
 
 ![Smile](images/image-6.png)
 
----
+The All Notes page is the heart of the application, where users can view and manage all their notes at a glance.
+
+On this page, users can:
+
+- **Add a new note** by entering a **Title** and **Description**.
+- **Select a Tag** from the drop-down menu (e.g., Health, Work, Learning ).
+- **Click the Add button** to submit the note.
+
+The newly added note will be placed into one of the four predefined stages (static sections) based on the selected Tag, allowing users to easily organize and track their tasks.
 
 ## The profile page
 
 ![Smile](images/image-5.png)
+
+On the Profile page, users can view and manage their personal information.
+
+Features include:
+
+- Viewing the current **Username** and **About** section.
+- Editing these details directly on the page.
+- Saving changes to update their profile information.
+
+This page allows users to personalize and maintain their profile as needed.
 
 ## **_Unsolved problems_**
 
@@ -153,4 +181,22 @@ Qassim Mohammed
 
 Fawaz Ahmed
 
+# 👤 Authors (Developed by)
+
+### Mohamed Alsaegh
+
 ---
+
+📫 Email: [mad6717@gmail.com](mailto:mad6717@gmail.com) | 🔗 GitHub: [MohamedAlsaegh](https://github.com/MohamedAlsaegh) | 💼 LinkedIn: [Mohamed Alsaegh](https://www.linkedin.com/in/mohamed-alsaegh-304ab31a3/)
+
+### Fawaz Aljar
+
+---
+
+📫 Email: [faaljar2@gmail.com](mailto:faaljar2@gmail.com) | 🔗 GitHub: [Fawaz Aljar](https://github.com/10Fawaz) | 💼 LinkedIn: [Fawaz Aljar](https://www.linkedin.com/in/fawaz-aljar-77900a36a/)
+
+### Qassim Alderazi
+
+---
+
+📫 Email: [Qm8222606@gmail.com](mailto:Qm8222606@gmail.com) | 🔗 GitHub: [Qassim Alderazi](https://github.com/MohamedAlsaegh) | 💼 LinkedIn: [Qassim Alderazi](https://www.linkedin.com/in/qassim-alderazi-0111402b5/)
