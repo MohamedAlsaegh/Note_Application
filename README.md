@@ -28,30 +28,59 @@ Visit the deployed project: [MindNote] ()
 
 Explore our development process on [Trello] ()
 
-### **_Technologies Used_**
+## 🛠️ Technologies Used
 
 ---
 
-Node.js & Express.js
+- `**Node.js**` & `**Express.js**` : Server-side JavaScript runtime and web framework for handling routing and server logic.
 
-MongoDB & Mongoose
+- `**MongoDB**` & `**Mongoose**` : NoSQL database and Object Data Modeling (ODM) library for managing application data.
 
-EJS Templating Engine
+- `**EJS (Embedded JavaScript Templates)**` : Templating engine used to render dynamic content on the server-side.
 
-Multer (for image uploads)
+- `**Multer**` : Middleware for handling image uploads via forms.
 
-Sessions and Authentication Middleware
+- `**Sessions` & `Authentication Middleware**` : Used for managing user login states and protecting restricted routes.
 
-CSS for front-end interactions
+- `**CSS**` : For styling and front-end user interface enhancements.<!-- this may be changed to Bootstrap -->
 
-### **_ScreenShots_**
+# **_ERD_**
 
 ---
 
 ![Smile](images/image.png)
-ERD
+The ERD consists of two main entities: **User** and **Notes**, structured to manage users and their personal notes efficiently.
+
+## Entities
+
+### User
+
+Represents an individual using the application, with the following attributes:
+
+- **Username** (String): Unique identifier for the user.
+- **Password** (String): Hashed password used for authentication.
+- **About** (String): A short bio or description of the user.
+- **Image** (String): Filename of the user’s profile image.
+
+### Notes
+
+Represents individual notes created by users, with the following attributes:
+
+- **Title** (String): The note’s title.
+- **Content** (String): The main text body of the note.
+- **Tag** (String): tag to specify which category the note belong to.
+- **UserId** (ObjectId): Reference linking the note to its owner (User).
+- **isCompleted** (Boolean): Flag indicating if the note task has been completed.
+- **Date** (Date): Timestamp of when the note was created or last updated.
+
+## Relationship
+
+- Each **Note** is associated with a single **User**, forming a **one-to-many** relationship where a user can have multiple notes.
+- This relationship ensures clear ownership and access control for notes within the application.
 
 ---
+
+## **_wireframe_**
 
 ![Smile](images/image-1.png)
 The Home Page
