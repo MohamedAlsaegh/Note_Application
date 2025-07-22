@@ -78,37 +78,57 @@ Represents individual notes created by users, with the following attributes:
 - Each **Note** is associated with a single **User**, forming a **one-to-many** relationship where a user can have multiple notes.
 - This relationship ensures clear ownership and access control for notes within the application.
 
----
+# **_wireframe_**
 
-## **_wireframe_**
+## The Home Page
 
 ![Smile](images/image-1.png)
-The Home Page
+
+The Home Page is the first screen the user sees upon visiting the application. From here, users can either:
+
+- **Sign Up** to create a new account if they are new to the app.
+- **Sign In** if they already have an existing account.
+
+This page acts as the gateway for users to access the app’s features by guiding them through the authentication process.
 
 ---
 
-![Smile](images/image-2.png)
-The LogIn Page
-
----
+## The SignUp Page
 
 ![Smile](images/image-3.png)
-The SignUp Page
+
+<!-- image need updating -->
+
+On the SignUp page, users can create a new account by entering the following information:
+
+- **Username**
+- **About You** (short bio)
+- **Password**
+- **Confirm Password**
+- Upload a **Profile Picture**
+
+If all inputs are valid and the username is available, the user will be redirected to the SignIn page.  
+If the username is already taken or there are other errors, an appropriate message will be displayed to inform the user.
 
 ---
 
-![Smile](images/image-4.png)
+The LogIn Page
+![Smile](images/image-2.png)
+
+---
+
 Managing your note
+![Smile](images/image-4.png)
 
 ---
 
-![Smile](images/image-5.png)
 The profile page
+![Smile](images/image-5.png)
 
 ---
 
-![Smile](images/image-6.png)
 The Main Notes View Page
+![Smile](images/image-6.png)
 
 ---
 
