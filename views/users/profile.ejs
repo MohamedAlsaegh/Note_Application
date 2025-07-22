@@ -1,15 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <form action="/users/<%= user._Id %>?_method=PUT" method="POST" enctype="multipart/form-data">
-        <input type="text" name="username" id="username" value="<%= user.username %>" placeholder="your name">
-        <input type="text" name="about" id="about" value="<%= user.about %>" placeholder="about you">
-        <input type="file" name="image">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Profile</title>
+  </head>
+  <body>
+    <%- include('../partials/navbar') %>
+
+    <form
+      action="/users/<%= user._id %>?_method=PUT"
+      method="POST"
+      enctype="multipart/form-data"
+    >
+      <input
+        type="text"
+        name="username"
+        id="username"
+        value="<%= user.username %>"
+        placeholder="your name"
+      />
+      <input
+        type="text"
+        name="about"
+        id="about"
+        value="<%= user.about %>"
+        placeholder="about you"
+      />
+      <input type="file" name="image" />
+      <button type="submit">Save</button>
     </form>
-</body>
+  </body>
 </html>

@@ -8,7 +8,9 @@ const isSignedIn = require('./middleware/is-signed-in')
 const authRouter = require('./routes/authRouter.js')
 const noteRouter = require('./routes/noteRouter.js')
 const userRouter = require('./routes/userRouter.js')
-const passUserToView=require('./middleware/pass-user-to-view.js')
+
+const passUserToView = require('./middleware/pass-user-to-view')
+
 // Database Configurations
 const db = require('./database')
 
@@ -21,9 +23,10 @@ app.set('views', path.join(__dirname, 'views'))
 
 app.use(logger('dev'))
 app.use(express.json()) // Parses incoming requests
-app.use(express.urlencoded({ extended: false })) // Parses URL-encoded data
+app.use(express.urlencoded({ extended: true })) // Parses URL-encoded data
 app.use(methodOverride('_method'))
 // app.use(passUserToView)
+
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
@@ -31,6 +34,7 @@ app.use(
     saveUninitialized: true
   })
 )
+app.use(passUserToView)
 
 app.use((req, res, next) => {
   res.locals.user = req.session.user
@@ -44,7 +48,6 @@ app.get('/', (req, res) => {
 app.use('/auth', authRouter)
 app.use('/notes', noteRouter)
 app.use('/users', userRouter)
-
 
 app.listen(PORT, () => {
   console.log(`Server runs on Port ${PORT}`)
