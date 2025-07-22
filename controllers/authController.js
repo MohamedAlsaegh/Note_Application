@@ -14,8 +14,12 @@ exports.auth_signup_post = async (req, res) => {
   }
   const hashedPassword = bcrypt.hashSync(req.body.password, 10)
   req.body.password = hashedPassword
+
+    if (req.file) {
+    req.body.image = req.file.filename
+  }
   const user = await User.create(req.body)
-  res.send(`Thanks for signing up, ${user.username}`)
+  res.redirect('/auth/sign-in')
 }
 exports.auth_signin_get = async (req, res) => {
   res.render(`./auth/sign-in.ejs`)
@@ -38,7 +42,6 @@ exports.auth_signin_post = async (req, res) => {
     _id: userInDatabase._id
   }
   res.redirect('/notes/show')
-  res.send(`Thanks for signing in, ${user.username}`)
 }
 exports.auth_signout_get = (req, res) => {
   req.session.destroy()
