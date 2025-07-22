@@ -19,7 +19,7 @@ const getUserById = async (req, res) => {
       image: user.image
     }
 
-    res.render('users/profile', { user: userProfileData })
+    res.render('users/profile.ejs', { user: userProfileData })
   } catch (error) {
     console.error('Error showing profile:', error.message)
   }
@@ -30,10 +30,14 @@ const updateUserData = async (req, res) => {
     const user = await User.findById(req.params.id)
 
     if (!user) {
-      return res.redirect('/auth/sign-up') // Redirect to sign-up if user not found
+      return res.redirect('/auth/sign-up')
     }
     user.username = req.body.username
     user.about = req.body.about
+
+    if (req.file) {
+      user.image = req.file.filename
+    }
 
     await user.save()
     res.redirect(`/users/${user._id}`)

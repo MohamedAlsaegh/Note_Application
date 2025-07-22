@@ -1,4 +1,3 @@
-
 // const express = require('express')
 // const multer = require('multer')
 // const storage = multer.diskStorage({
@@ -12,7 +11,6 @@
 
 // const upload = multer({ storage: storage })
 // const app = express()
-
 
 // app.post('/profile', upload.single('image'), function (req, res, next) {
 //   console.log(req.body)
