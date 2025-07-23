@@ -21,41 +21,46 @@
         placeholder="your name"
       />
        <input
+
         type="text"
         name="about"
         id="about"
         value="  <%= user.about %> "
         placeholder="about you"
       />
-        <input type="file" name="image" id="imageInput" accept="image/*" />
+      <input type="file" name="image" id="imageInput" accept="image/*" />
       <button type="submit">Save</button>
     </form>
     <nav>
-          <img src="/uploads/<%= user.image %>" alt="" width="70px" height="70px" id="imagePreview">
-
+      <img
+        src="/uploads/<%= user.image %>"
+        alt=""
+        width="70px"
+        height="70px"
+        id="imagePreview"
+      />
     </nav>
-
   </body>
 </html>
 <script>
-  const imageInput = document.getElementById('imageInput');
-  const imagePreview = document.getElementById('imagePreview');
+  const imageInput = document.getElementById('imageInput')
+  const imagePreview = document.getElementById('imagePreview')
 
   imageInput.addEventListener('change', function () {
-    const file = this.files[0];
+    const file = this.files[0]
 
     if (file) {
-      const reader = new FileReader();
+      const reader = new FileReader()
 
       reader.onload = function (e) {
-        imagePreview.src = e.target.result;
-        imagePreview.style.display = 'block'; // show the image
-      };
+        imagePreview.src = e.target.result
+        imagePreview.style.display = 'block' // show the image
+      }
 
-      reader.readAsDataURL(file); // read the file as base64
+      reader.readAsDataURL(file) // read the file as base64
     } else {
-      imagePreview.src = '#';
-      imagePreview.style.display = 'none'; // hide if no file selected
+      imagePreview.src = '#'
+      imagePreview.style.display = 'none' // hide if no file selected
     }
-  });
+  })
 </script>
