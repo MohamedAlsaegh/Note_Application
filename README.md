@@ -62,7 +62,7 @@ Follow these steps to start using **MindNote**:
 
 - `**CSS**` : For styling and front-end user interface enhancements.<!-- this may be changed to Bootstrap -->
 
-# **_ERD_**
+# **ERD**
 
 ![Smile](images/image.png)
 The ERD consists of two main entities: **User** and **Notes**, structured to manage users and their personal notes efficiently.
@@ -94,7 +94,7 @@ Represents individual notes created by users, with the following attributes:
 - Each **Note** is associated with a single **User**, forming a **one-to-many** relationship where a user can have multiple notes.
 - This relationship ensures clear ownership and access control for notes within the application.
 
-# **_wireframe_**
+# **wireframe**
 
 ## The Home Page
 
