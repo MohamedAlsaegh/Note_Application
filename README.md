@@ -43,8 +43,6 @@ Follow these steps to start using **MindNote**:
 3. **Create, view, and manage notes** using titles, descriptions, and tags.
 4. Your session is **secure**, and all your data is **private and user-specific**.
 
-🔗 **Live App**: [Try MindNote](...)
-
 💻 **GitHub Repository**: [Note Application on GitHub](https://github.com/MohamedAlsaegh/Note_Application)
 
 🗂️ **Project Planning Board** (Trello): [MindNote Planning Board](https://trello.com/invite/b/6878e9e50aaedd6c404cb7cc/ATTIf5e69d48a9f88dc3cd4138e545580463BC2D6BF9/mindnote)
