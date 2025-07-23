@@ -1,27 +1,19 @@
 const User = require('../models/User.js')
 const Note = require('../models/Note.js')
 
-const createNote = async (req, res) => {
-  try {
-    req.body.isCompleted = !!req.body.isCompleted
-    //!! is a common trick to convert any value to a strict Boolean
-    req.body.tag = req.body.tag?.trim().toLowerCase()
-
-    const user = await User.findById(req.body.userId)
-    if (!user) {
-      return res.status(404).send('User not found')
-    }
-
-    const note = await Note.create(req.body)
-    user.notes = user.notes || [] // AI
-    user.notes.push(note._id)
-    await user.save()
-
-    res.redirect('/notes/show')
-  } catch (error) {
-    console.error('An error has occurred creating a note!', error.message)
-  }
+const notes_create_get = async (req, res) => {
+ res.render("notes/show.ejs")
 }
+ const notes_create_post=async (req,res)=>{
+  if(req.body.isCompleted==="on"){
+    req.body.isCompleted=true
+  }
+  else{
+    req.body.isCompleted=false
+  }
+  await Note.create(req.body)
+  res.redirect("/notes/show")
+ }
 const getAllnotes = async (req, res) => {
   try {
     const note = await Note.find({})
@@ -47,6 +39,12 @@ const updateNoteById = async (req, res) => {
     req.body.isCompleted = !!req.body.isCompleted
     req.body.tag = req.body.tag.trim().toLowerCase()
     await Note.findByIdAndUpdate(req.params.id, req.body, { new: true })
+
+    if (req.body.isCompleted === 'on') {
+      req.body.isCompleted = true
+    } else {
+      req.body.isCompleted = false
+    }
     res.redirect('/notes/show')
   } catch (error) {
     console.error('Note update error:', error.message)
@@ -104,7 +102,8 @@ const noteEdit = async (req, res) => {
 }
 
 module.exports = {
-  createNote,
+  notes_create_get,
+  notes_create_post,
   getAllnotes,
   getnoteById,
   updateNoteById,
