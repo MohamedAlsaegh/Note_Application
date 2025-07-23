@@ -28,7 +28,7 @@ Whether you're jotting down quick reminders, organizing tasks, or planning long-
   - [The Profile Page](#the-profile-page)
 - [🧩 Challenges Faced](#-challenges-faced)
 - [🐞 Unsolved Problems](#-unsolved-problems)
-- [✨ Future Enhancements](#-future-enhancements)
+- [✨ Possible Future Enhancements](#-possible-future-enhancements)
 - [🙌 Credits](#-credits)
 - [👤 Authors (Developed by)](#-authors-developed-by)
   - [Mohamed Alsaegh](#mohamed-alsaegh)
