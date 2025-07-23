@@ -19,7 +19,7 @@ const getUserById = async (req, res) => {
       image: user.image
     }
 
-    res.render('users/profile', { user: userProfileData })
+    res.render('users/profile.ejs', { user: userProfileData })
   } catch (error) {
     console.error('Error showing profile:', error.message)
   }
@@ -32,6 +32,7 @@ if(req.file){
 }
   await User.findByIdAndUpdate(req.params.userId,req.body)
       res.redirect(`/users/${req.params.userId}`)
+
 }
 
 module.exports = {

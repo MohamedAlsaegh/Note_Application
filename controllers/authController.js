@@ -1,5 +1,6 @@
 const User = require('../models/User')
 const bcrypt = require('bcrypt')
+
 // API's
 exports.auth_signup_get = async (req, res) => {
   res.render('./auth/sign-up.ejs')
@@ -15,7 +16,7 @@ exports.auth_signup_post = async (req, res) => {
   const hashedPassword = bcrypt.hashSync(req.body.password, 10)
   req.body.password = hashedPassword
 
-    if (req.file) {
+  if (req.file) {
     req.body.image = req.file.filename
   }
   const user = await User.create(req.body)

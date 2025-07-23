@@ -4,6 +4,7 @@ const Note = require('../models/Note.js')
 const createNote = async (req, res) => {
   try {
     req.body.isCompleted = !!req.body.isCompleted
+    //!! is a common trick to convert any value to a strict Boolean
     req.body.tag = req.body.tag?.trim().toLowerCase()
 
     const user = await User.findById(req.body.userId)
@@ -12,7 +13,7 @@ const createNote = async (req, res) => {
     }
 
     const note = await Note.create(req.body)
-    user.notes = user.notes || []
+    user.notes = user.notes || [] // AI
     user.notes.push(note._id)
     await user.save()
 
@@ -24,7 +25,7 @@ const createNote = async (req, res) => {
 const getAllnotes = async (req, res) => {
   try {
     const note = await Note.find({})
-    res.send(note) //will be EJS page later
+    res.send(note)
   } catch (error) {
     console.error('Error fetching notes:', error.message)
   }
@@ -35,7 +36,7 @@ const getnoteById = async (req, res) => {
     const note = await Note.findById(req.params.id)
     console.log(note)
 
-    res.send(note) //will be EJS page later
+    res.send(note)
   } catch (error) {
     console.error('An error has occurred getting a note!', error.message)
   }
