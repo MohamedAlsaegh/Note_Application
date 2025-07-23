@@ -4,9 +4,6 @@
   <h2>Edit Your Note</h2>
 
   <form action="/notes/<%= note._id %>?_method=PUT" method="POST">
-    <input type="hidden" name="isCompleted" value="false" />
-    <input type="checkbox" name="isCompleted" value="true" <%= note.isCompleted
-    ? 'checked' : '' %> />
     <input
       type="text"
       name="title"
@@ -21,18 +18,20 @@
       placeholder="Update your content..."
       required
     >
-<%= note.content %></textarea
+    <%= note.content %></textarea
     >
 
-    <input
-      type="text"
-      name="tag"
-      value="<%= note.tag %>"
-      placeholder="Tag (e.g. personal, work)"
-      required
-    />
+    <label for="tag">Tag</label>
+    <select name="tag" id="tag" required>
+      <% allTags.forEach(tag => { %>
+        <option value="<%= tag %>" <%= note.tag === tag ? 'selected' : '' %>>
+        <%= tag %>
+        </option>
+     <% }) %>
+</select>
 
     <label>
+      <input type="hidden" name="isCompleted" value="false" />
       <input type="checkbox" name="isCompleted" <%= note.isCompleted ? 'checked'
       : '' %> /> Mark as completed
     </label>

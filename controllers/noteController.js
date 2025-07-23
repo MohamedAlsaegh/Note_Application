@@ -69,7 +69,10 @@ const note_show_get = async (req, res) => {
     }
 
     const user = await User.findById(req.session.user._id)
-    const allTags = await Note.distinct('tag')
+    const allTags = ['work', 'personal', 'urgent', 'projects']
+
+    // const note = await Note.findById(req.params.id)
+    // res.render('notes/edit', { note, allTags })
 
     const taggedNotes = await Promise.all(
       allTags.map(async (tag) => {
@@ -90,8 +93,11 @@ const note_show_get = async (req, res) => {
 
 const noteEdit = async (req, res) => {
   try {
+    const allTags = ['work', 'personal', 'urgent', 'projects']
     const note = await Note.findById(req.params.id)
-    res.render('notes/edit', { note })
+    if (!note) return res.status(404).send('Note not found')
+
+    res.render('notes/edit', { note, allTags })
   } catch (error) {
     console.error('Error loading edit page:', error.message)
   }
