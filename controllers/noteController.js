@@ -1,26 +1,19 @@
 const User = require('../models/User.js')
 const Note = require('../models/Note.js')
 
-// CREATE note
+const notes_create_get = async (req, res) => {
+  res.render('notes/show.ejs')
+}
 const notes_create_post = async (req, res) => {
-  try {
-    req.body.isCompleted = req.body.isCompleted === "on"
-    req.body.tag = req.body.tag.trim().toLowerCase()
-    
-    // Attach current userId if not sent from the form
-    if (!req.body.userId && req.session.user) {
-      req.body.userId = req.session.user._id
-    }
-
-    await Note.create(req.body)
-    res.redirect("/notes/show")
-  } catch (error) {
-    console.error("Create Note Error:", error.message)
-    res.redirect("/notes/show")
+  if (req.body.isCompleted === 'on') {
+    req.body.isCompleted = true
+  } else {
+    req.body.isCompleted = false
   }
+  await Note.create(req.body)
+  res.redirect('/notes/show')
 }
 
-// GET all notes as API
 const getAllnotes = async (req, res) => {
   try {
     const notes = await Note.find({})
@@ -47,8 +40,13 @@ const updateNoteById = async (req, res) => {
   try {
     req.body.isCompleted = !!req.body.isCompleted
     req.body.tag = req.body.tag.trim().toLowerCase()
+    await Note.findByIdAndUpdate(req.params.id, req.body, { new: true })
 
-    await Note.findByIdAndUpdate(req.params.id, req.body)
+    if (req.body.isCompleted === 'on') {
+      req.body.isCompleted = true
+    } else {
+      req.body.isCompleted = false
+    }
     res.redirect('/notes/show')
   } catch (error) {
     console.error('Update Note Error:', error.message)
