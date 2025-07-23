@@ -5,13 +5,15 @@ const notes_create_get = async (req, res) => {
   res.render('notes/show.ejs')
 }
 const notes_create_post = async (req, res) => {
-  if (req.body.isCompleted === 'on') {
-    req.body.isCompleted = true
-  } else {
-    req.body.isCompleted = false
+  try {
+    req.body.isCompleted = req.body.isCompleted === 'on'
+    req.body.userId = req.session.user._id // Securely assign ownership
+
+    await Note.create(req.body)
+    res.redirect('/notes/show')
+  } catch (error) {
+    console.error('Error creating note:', error.message)
   }
-  await Note.create(req.body)
-  res.redirect('/notes/show')
 }
 
 const getAllnotes = async (req, res) => {
@@ -36,13 +38,12 @@ const getnoteById = async (req, res) => {
 
 const updateNoteById = async (req, res) => {
   try {
-        if (req.body.isCompleted === 'on') {
+    if (req.body.isCompleted === 'on') {
       req.body.isCompleted = true
     } else {
       req.body.isCompleted = false
     }
     await Note.findByIdAndUpdate(req.params.id, req.body, { new: true })
-
 
     res.redirect('/notes/show')
   } catch (error) {
@@ -68,12 +69,12 @@ const note_show_get = async (req, res) => {
     const user = await User.findById(req.session.user._id)
     const allTags = ['work', 'personal', 'urgent', 'projects']
 
-    // const note = await Note.findById(req.params.id)
-    // res.render('notes/edit', { note, allTags })
-
     const taggedNotes = await Promise.all(
       allTags.map(async (tag) => {
-        const notes = await Note.find({ tag })
+        const notes = await Note.find({
+          tag,
+          userId: req.session.user._id
+        })
         return { tag, notes }
       })
     )
