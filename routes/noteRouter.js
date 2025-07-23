@@ -7,7 +7,7 @@ const noteController = require('../controllers/noteController.js')
 //ApI's
 router.get('/show',noteController.notes_create_get)
 
-router.post('/', noteController.createNote)
+router.post('/', noteController.notes_create_post)
 router.get('/', noteController.getAllnotes)
 
 router.get('/show', noteController.note_show_get)
