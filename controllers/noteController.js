@@ -1,27 +1,19 @@
 const User = require('../models/User.js')
 const Note = require('../models/Note.js')
 
-const createNote = async (req, res) => {
-  try {
-    req.body.isCompleted = !!req.body.isCompleted
-    //!! is a common trick to convert any value to a strict Boolean
-    req.body.tag = req.body.tag?.trim().toLowerCase()
-
-    const user = await User.findById(req.body.userId)
-    if (!user) {
-      return res.status(404).send('User not found')
-    }
-
-    const note = await Note.create(req.body)
-    user.notes = user.notes || [] // AI
-    user.notes.push(note._id)
-    await user.save()
-
-    res.redirect('/notes/show')
-  } catch (error) {
-    console.error('An error has occurred creating a note!', error.message)
-  }
+const notes_create_get = async (req, res) => {
+ res.render("notes/show.ejs")
 }
+ const notes_create_post=async (req,res)=>{
+  if(req.body.isCompleted==="on"){
+    req.body.isCompleted=true
+  }
+  else{
+    req.body.isCompleted=false
+  }
+  await Note.create(req.body)
+  res.redirect("/notes/show")
+ }
 const getAllnotes = async (req, res) => {
   try {
     const note = await Note.find({})
@@ -75,7 +67,10 @@ const note_show_get = async (req, res) => {
     }
 
     const user = await User.findById(req.session.user._id)
-    const allTags = await Note.distinct('tag')
+    const allTags = ['work', 'personal', 'urgent', 'projects']
+
+    // const note = await Note.findById(req.params.id)
+    // res.render('notes/edit', { note, allTags })
 
     const taggedNotes = await Promise.all(
       allTags.map(async (tag) => {
@@ -96,15 +91,19 @@ const note_show_get = async (req, res) => {
 
 const noteEdit = async (req, res) => {
   try {
+    const allTags = ['work', 'personal', 'urgent', 'projects']
     const note = await Note.findById(req.params.id)
-    res.render('notes/edit', { note })
+    if (!note) return res.status(404).send('Note not found')
+
+    res.render('notes/edit', { note, allTags })
   } catch (error) {
     console.error('Error loading edit page:', error.message)
   }
 }
 
 module.exports = {
-  createNote,
+  notes_create_get,
+  notes_create_post,
   getAllnotes,
   getnoteById,
   updateNoteById,
