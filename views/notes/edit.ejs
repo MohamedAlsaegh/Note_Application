@@ -12,14 +12,13 @@
       required
     />
 
-<textarea
-  name="content"
-  rows="4"
-  placeholder="Update your content..."
-  required
-><%= note.content %></textarea>
+    <textarea
+    name="content"
+    rows="4"
+    placeholder="Update your content..."
+    required
+   ><%= note.content %></textarea>
 
-    
 
     <label for="tag">Tag</label>
     <select name="tag" id="tag" required>
@@ -27,8 +26,8 @@
         <option value="<%= tag %>" <%= note.tag === tag ? 'selected' : '' %>>
         <%= tag %>
         </option>
-     <% }) %>
-</select>
+        <% }) %>
+    </select>
 
 
 <input 
