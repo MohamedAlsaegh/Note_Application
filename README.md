@@ -15,7 +15,7 @@ Whether you're jotting down quick reminders, organizing tasks, or planning long-
 - [📋 Table of Contents](#-table-of-contents)
 - [🚀 Getting Started](#-getting-started)
 - [🔗 Project Links](#-getting-started)
-- [🛠️ Technologies](#technologies)
+- [🛠️ Technologies](#-technologies)
 - [📊 ERD](#erd)
   - [Entities](#entities)
   - [Relationship](#relationship)
