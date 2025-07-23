@@ -186,7 +186,8 @@ This page allows users to personalize and maintain their profile as needed.
 - Implement note recovery (trash bin).
 - Add user notifications (e.g., "Note saved successfully").
 - Integrate dark mode toggle.
-- Improve mobile responsiveness with a fully adaptive layout.
+- Last update of each note date.
+- user image profile in the navbar
 
 ## **🙌 Credits**
 
@@ -194,6 +195,7 @@ This page allows users to personalize and maintain their profile as needed.
 - Icons and illustrations by [Flaticon](https://www.flaticon.com/).
 - [MongoDB Docs](https://www.mongodb.com/docs/) and [MDN Web Docs](https://developer.mozilla.org/) for technical references.
 - Team brainstorming and task management via [Trello](https://trello.com/).
+- Utilized [BootstrapExamples](https://bootstrapexamples.com/), a free and community-driven library of Bootstrap CSS components, to enhance the UI design and ensure consistent styling across the project.
 
 # 👤 Authors (Developed by)
 
