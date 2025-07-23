@@ -5,9 +5,7 @@ const isSignedIn = require('../middleware/is-signed-in')
 const noteController = require('../controllers/noteController.js')
 
 //ApI's
-router.get('/home', isSignedIn, (req, res) => {
-  res.render('notes/home', { user: req.session.user })
-})
+router.get('/show',noteController.notes_create_get)
 
 router.post('/', noteController.createNote)
 router.get('/', noteController.getAllnotes)
