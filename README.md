@@ -15,7 +15,7 @@ Whether you're jotting down quick reminders, organizing tasks, or planning long-
 - [📋 Table of Contents](#-table-of-contents)
 - [🚀 Getting Started](#-getting-started)
 - [🔗 Project Links](#-getting-started)
-- [🛠️ Technologies Used](#technologies-used)
+- [🛠️ Technologies Used](#-technologies-used)
 - [📊 ERD](#erd)
   - [Entities](#entities)
   - [Relationship](#relationship)
@@ -50,17 +50,17 @@ Follow these steps to start using **MindNote**:
 
 ## 🛠️ Technologies Used
 
-- `**Node.js**` & `**Express.js**` : Server-side JavaScript runtime and web framework for handling routing and server logic.
+- **`Node.js`** & **`Express.js`** : Server-side JavaScript runtime and web framework for handling routing and server logic.
 
-- `**MongoDB**` & `**Mongoose**` : NoSQL database and Object Data Modeling (ODM) library for managing application data.
+- **`MongoDB`** & **`Mongoose`** : NoSQL database and Object Data Modeling (ODM) library for managing application data.
 
-- `**EJS (Embedded JavaScript Templates)**` : Templating engine used to render dynamic content on the server-side.
+- **`EJS (Embedded JavaScript Templates)`** : Templating engine used to render dynamic content on the server-side.
 
-- `**Multer**` : Middleware for handling image uploads via forms.
+- **`Multer`** : Middleware for handling image uploads via forms.
 
-- `**Sessions` & `Authentication Middleware**` : Used for managing user login states and protecting restricted routes.
+- **`Sessions`** & **`Authentication Middleware`** : Used for managing user login states and protecting restricted routes.
 
-- `**CSS**` : For styling and front-end user interface enhancements.<!-- this may be changed to Bootstrap -->
+- **`CSS`** : For styling and front-end user interface enhancements.<!-- this may be changed to Bootstrap -->
 
 # **ERD**
 
