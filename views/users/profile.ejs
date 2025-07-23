@@ -2,65 +2,103 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>User Profile</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <%- include('../partials/navbar') %>
 
-    <form
-      action="/users/<%= user._id %>?_method=PUT"
-      method="POST"
-      enctype="multipart/form-data"
-    >
-      <input
-        type="text"
-        name="username"
-        id="username"
-        value="<%= user.username %>"
-        placeholder="your name"
-      />
-      <input
+    <div class="container py-5" style="max-width: 400px">
+      <h2 class="mb-4 text-center">Edit Your Profile</h2>
 
-        type="text"
-        name="about"
-        id="about"
-        value="  <%= user.about %> "
-        placeholder="about you"
-      />
-      <input type="file" name="image" id="imageInput" accept="image/*" />
-      <button type="submit">Save</button>
-    </form>
-    <nav>
-      <img
-        src="/uploads/<%= user.image %>"
-        alt=""
-        width="70px"
-        height="70px"
-        id="imagePreview"
-      />
-    </nav>
+      <div class="text-center mb-4">
+        <img
+          src="/uploads/<%= user.image %>"
+          alt="Profile Image"
+          id="imagePreview"
+          class="rounded-circle border"
+          style="
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            display: inline-block;
+          "
+        />
+      </div>
+
+      <form
+        action="/users/<%= user._id %>?_method=PUT"
+        method="POST"
+        enctype="multipart/form-data"
+        class="d-flex flex-column gap-3"
+      >
+        <div>
+          <label for="username" class="form-label">Username</label>
+          <input
+            type="text"
+            name="username"
+            id="username"
+            value="<%= user.username %>"
+            placeholder="Your name"
+            class="form-control"
+            required
+          />
+        </div>
+
+        <div>
+          <label for="about" class="form-label">About You</label>
+          <input
+            type="text"
+            name="about"
+            id="about"
+            value="<%= user.about %>"
+            placeholder="About you"
+            class="form-control"
+          />
+        </div>
+
+        <div>
+          <label for="imageInput" class="form-label"
+            >Change Profile Image</label
+          >
+          <input
+            type="file"
+            name="image"
+            id="imageInput"
+            accept="image/*"
+            class="form-control"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary mt-2">Save</button>
+      </form>
+    </div>
+
+    <script>
+      const imageInput = document.getElementById('imageInput')
+      const imagePreview = document.getElementById('imagePreview')
+
+      imageInput.addEventListener('change', function () {
+        const file = this.files[0]
+
+        if (file) {
+          const reader = new FileReader()
+
+          reader.onload = function (e) {
+            imagePreview.src = e.target.result
+            imagePreview.style.display = 'inline-block' // show the image
+          }
+
+          reader.readAsDataURL(file) // read the file as base64
+        } else {
+          imagePreview.src = '/uploads/<%= user.image %>' // fallback to original
+        }
+      })
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
-<script>
-  const imageInput = document.getElementById('imageInput')
-  const imagePreview = document.getElementById('imagePreview')
-
-  imageInput.addEventListener('change', function () {
-    const file = this.files[0]
-
-    if (file) {
-      const reader = new FileReader()
-
-      reader.onload = function (e) {
-        imagePreview.src = e.target.result
-        imagePreview.style.display = 'block' // show the image
-      }
-
-      reader.readAsDataURL(file) // read the file as base64
-    } else {
-      imagePreview.src = '#'
-      imagePreview.style.display = 'none' // hide if no file selected
-    }
-  })
-</script>

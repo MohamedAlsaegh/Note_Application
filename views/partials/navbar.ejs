@@ -23,8 +23,24 @@
         <li class="nav-item">
           <a class="nav-link" href="/notes/show">Notes</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/users/<%= user._id %>">My Profile</a>
+        <li class="nav-item d-flex align-items-center">
+          <a
+            class="nav-link d-flex align-items-center"
+            href="/users/<%= user._id %>"
+          >
+            <img
+              src="/uploads/<%= user.image %>"
+              alt="Profile"
+              style="
+                width: 30px;
+                height: 30px;
+                object-fit: cover;
+                border-radius: 50%;
+                margin-right: 8px;
+              "
+            />
+            My Profile
+          </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/auth/sign-out">Sign Out</a>
