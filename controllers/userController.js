@@ -26,24 +26,13 @@ const getUserById = async (req, res) => {
 }
 
 const updateUserData = async (req, res) => {
-  try {
-    const user = await User.findById(req.params.id)
+if(req.file){
+  
+  req.body.image=req.file.filename
+}
+  await User.findByIdAndUpdate(req.params.userId,req.body)
+      res.redirect(`/users/${req.params.userId}`)
 
-    if (!user) {
-      return res.redirect('/auth/sign-up')
-    }
-    user.username = req.body.username
-    user.about = req.body.about
-
-    if (req.file) {
-      user.image = req.file.filename
-    }
-
-    await user.save()
-    res.redirect(`/users/${user._id}`)
-  } catch (error) {
-    console.error('An error occurred updating user data:', error.message)
-  }
 }
 
 module.exports = {

@@ -26,20 +26,36 @@
         id="about"
         value="  user.about "
         placeholder="about you"
-      /> -->
-      <textarea
-        name="about"
-        placeholder="About me"
-        id="about"
-        rows="4"
-        required
-      >
-<%= user.about %></textarea
-      >
-
-      <input type="file" name="image" />
+      />
+        <input type="file" name="image" id="imageInput" accept="image/*" />
       <button type="submit">Save</button>
     </form>
-    <img src="/uploads/<%= user.image %>" alt="" />
+    <nav>
+          <img src="/uploads/<%= user.image %>" alt="" width="70px" height="70px" id="imagePreview">
+
+    </nav>
+
   </body>
 </html>
+<script>
+  const imageInput = document.getElementById('imageInput');
+  const imagePreview = document.getElementById('imagePreview');
+
+  imageInput.addEventListener('change', function () {
+    const file = this.files[0];
+
+    if (file) {
+      const reader = new FileReader();
+
+      reader.onload = function (e) {
+        imagePreview.src = e.target.result;
+        imagePreview.style.display = 'block'; // show the image
+      };
+
+      reader.readAsDataURL(file); // read the file as base64
+    } else {
+      imagePreview.src = '#';
+      imagePreview.style.display = 'none'; // hide if no file selected
+    }
+  });
+</script>
