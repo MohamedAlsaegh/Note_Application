@@ -15,7 +15,7 @@ Whether you're jotting down quick reminders, organizing tasks, or planning long-
 - [📋 Table of Contents](#-table-of-contents)
 - [🚀 Getting Started](#-getting-started)
 - [🔗 Project Links](#-getting-started)
-- [🛠️ Technologies Used](#-technologies-used)
+- [🛠️ Technologies](#technologies)
 - [📊 ERD](#erd)
   - [Entities](#entities)
   - [Relationship](#relationship)
@@ -48,7 +48,7 @@ Follow these steps to start using **MindNote**:
 
 🗂️ **Project Planning Board** (Trello): [MindNote Planning Board](https://trello.com/invite/b/6878e9e50aaedd6c404cb7cc/ATTIf5e69d48a9f88dc3cd4138e545580463BC2D6BF9/mindnote)
 
-## 🛠️ Technologies Used
+## 🛠️ Technologies
 
 - **`Node.js`** & **`Express.js`** : Server-side JavaScript runtime and web framework for handling routing and server logic.
 
