@@ -2,18 +2,18 @@ const User = require('../models/User.js')
 const Note = require('../models/Note.js')
 
 const notes_create_get = async (req, res) => {
- res.render("notes/show.ejs")
+  res.render('notes/show.ejs')
 }
- const notes_create_post=async (req,res)=>{
-  if(req.body.isCompleted==="on"){
-    req.body.isCompleted=true
-  }
-  else{
-    req.body.isCompleted=false
+const notes_create_post = async (req, res) => {
+  if (req.body.isCompleted === 'on') {
+    req.body.isCompleted = true
+  } else {
+    req.body.isCompleted = false
   }
   await Note.create(req.body)
-  res.redirect("/notes/show")
- }
+  res.redirect('/notes/show')
+}
+
 const getAllnotes = async (req, res) => {
   try {
     const note = await Note.find({})
