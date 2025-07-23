@@ -47,6 +47,12 @@ const updateNoteById = async (req, res) => {
     req.body.isCompleted = !!req.body.isCompleted
     req.body.tag = req.body.tag.trim().toLowerCase()
     await Note.findByIdAndUpdate(req.params.id, req.body, { new: true })
+
+    if (req.body.isCompleted === 'on') {
+      req.body.isCompleted = true
+    } else {
+      req.body.isCompleted = false
+    }
     res.redirect('/notes/show')
   } catch (error) {
     console.error('Note update error:', error.message)
