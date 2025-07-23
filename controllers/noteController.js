@@ -16,26 +16,24 @@ const notes_create_post = async (req, res) => {
 
 const getAllnotes = async (req, res) => {
   try {
-    const notes = await Note.find({})
-    res.send(notes)
+    const note = await Note.find({})
+    res.send(note)
   } catch (error) {
-    console.error("Error fetching notes:", error.message)
-    res.status(500).send("Server Error")
+    console.error('Error fetching notes:', error.message)
   }
 }
 
-// GET note by ID as API
 const getnoteById = async (req, res) => {
   try {
     const note = await Note.findById(req.params.id)
+    console.log(note)
+
     res.send(note)
   } catch (error) {
-    console.error("Error getting note by ID:", error.message)
-    res.status(500).send("Server Error")
+    console.error('An error has occurred getting a note!', error.message)
   }
 }
 
-// UPDATE note by ID
 const updateNoteById = async (req, res) => {
   try {
     req.body.isCompleted = !!req.body.isCompleted
@@ -49,31 +47,34 @@ const updateNoteById = async (req, res) => {
     }
     res.redirect('/notes/show')
   } catch (error) {
-    console.error('Update Note Error:', error.message)
-    res.redirect('/notes/show')
+    console.error('Note update error:', error.message)
   }
 }
 
-// DELETE note
 const deleteNoteById = async (req, res) => {
   try {
     await Note.findByIdAndDelete(req.params.id)
     res.redirect('/notes/show')
   } catch (error) {
-    console.error('Delete Note Error:', error.message)
-    res.redirect('/notes/show')
+    console.error('An error has occurred deleting a note!', error.message)
   }
 }
 
-// SHOW PAGE (Dashboard)
 const note_show_get = async (req, res) => {
   try {
+    if (!req.session.user) {
+      return res.redirect('/auth/sign-in')
+    }
+
     const user = await User.findById(req.session.user._id)
     const allTags = ['work', 'personal', 'urgent', 'projects']
 
+    // const note = await Note.findById(req.params.id)
+    // res.render('notes/edit', { note, allTags })
+
     const taggedNotes = await Promise.all(
       allTags.map(async (tag) => {
-        const notes = await Note.find({ tag, userId: user._id })
+        const notes = await Note.find({ tag })
         return { tag, notes }
       })
     )
@@ -84,27 +85,24 @@ const note_show_get = async (req, res) => {
       taggedNotes
     })
   } catch (error) {
-    console.error('Error loading dashboard:', error.message)
-    res.redirect('/')
+    console.error('Error loading show page:', error.message)
   }
 }
 
-// EDIT page
 const noteEdit = async (req, res) => {
   try {
     const allTags = ['work', 'personal', 'urgent', 'projects']
     const note = await Note.findById(req.params.id)
-
     if (!note) return res.status(404).send('Note not found')
 
     res.render('notes/edit', { note, allTags })
   } catch (error) {
     console.error('Error loading edit page:', error.message)
-    res.redirect('/notes/show')
   }
 }
 
 module.exports = {
+  notes_create_get,
   notes_create_post,
   getAllnotes,
   getnoteById,

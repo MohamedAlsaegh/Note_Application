@@ -1,11 +1,8 @@
 const express = require('express')
 const router = express.Router()
-const noteController = require('../controllers/noteController')
+const isSignedIn = require('../middleware/is-signed-in')
 
-// NOTE: `isSignedIn` is applied globally in server.js
-
-// Dashboard page
-router.get('/show', noteController.note_show_get)
+const noteController = require('../controllers/noteController.js')
 
 //ApI's
 router.get('/show', noteController.note_show_get)
