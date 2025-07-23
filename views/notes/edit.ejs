@@ -12,12 +12,12 @@
       required
     />
 
-<textarea
-  name="content"
-  rows="4"
-  placeholder="Update your content..."
-  required
-><%= note.content %></textarea>
+    <textarea
+    name="content"
+    rows="4"
+    placeholder="Update your content..."
+    required
+   ><%= note.content %></textarea>
 
     
 
@@ -27,8 +27,8 @@
         <option value="<%= tag %>" <%= note.tag === tag ? 'selected' : '' %>>
         <%= tag %>
         </option>
-     <% }) %>
-</select>
+        <% }) %>
+    </select>
 
     <label>
       <input type="hidden" name="isCompleted" value="false" />

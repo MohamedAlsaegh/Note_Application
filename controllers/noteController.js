@@ -71,9 +71,6 @@ const note_show_get = async (req, res) => {
     const user = await User.findById(req.session.user._id)
     const allTags = ['work', 'personal', 'urgent', 'projects']
 
-    // const note = await Note.findById(req.params.id)
-    // res.render('notes/edit', { note, allTags })
-
     const taggedNotes = await Promise.all(
       allTags.map(async (tag) => {
         const notes = await Note.find({ tag })
