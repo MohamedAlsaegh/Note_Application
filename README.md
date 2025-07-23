@@ -28,7 +28,7 @@ Whether you're jotting down quick reminders, organizing tasks, or planning long-
   - [The Profile Page](#the-profile-page)
 - [🧩 Challenges Faced](#-challenges-faced)
 - [🐞 Unsolved Problems](#-unsolved-problems)
-- [✨ Future Enhancements](#-future-enhancements)
+- [✨ Possible Future Enhancements](#-possible-future-enhancements)
 - [🙌 Credits](#-credits)
 - [👤 Authors (Developed by)](#-authors-developed-by)
   - [Mohamed Alsaegh](#mohamed-alsaegh)
@@ -188,6 +188,7 @@ This page allows users to personalize and maintain their profile as needed.
    The hardest challenge was definitely dealing with bugs throughout the project. As beginners, this process was sometimes frustrating. Thankfully, with guidance from our instructors and a little help from AI tools, we managed to resolve most of the issues — which, to be honest, were often just spelling mistakes or missing imports. 😂
 
 3. **Restructuring the Views**
+
    Another significant challenge was restructuring the entire view layer. We had to break down the EJS view pages into properly organized `<div>` sections to effectively apply the necessary Bootstrap classes. This required a lot of careful refactoring but resulted in a much cleaner and more responsive UI.
 
 ### Fawaz challenges
@@ -195,6 +196,7 @@ This page allows users to personalize and maintain their profile as needed.
 ---
 
 1. **GitHub and Teamwork**
+
    GitHub collaboration was tricky at first. Managing push, pull, and merge operations caused some confusion, especially when multiple teammates worked on interdependent features. But after syncing up on workflows and communication, version control became much smoother — and our teamwork stronger.
 
 2. **Debugging**
@@ -209,16 +211,20 @@ This page allows users to personalize and maintain their profile as needed.
 
 ---
 
-1. **Setting up Multer properly**  
+1. **Setting up Multer properly**
+
    One of the biggest challenges was figuring out how to set up Multer the right way. It was confusing at first to understand how it connects the server, routes, and the form. Sometimes the file wouldn’t upload, or the server wouldn’t recognize it, so we had to debug each step carefully.
 
-2. **Understanding how image uploading works during sign-up**  
+2. **Understanding how image uploading works during sign-up**
+
    Initially, it was unclear how the uploaded image is saved in a specific folder like `public/uploads`, and how that image is then linked to the user in the database. Understanding how all these parts work together took some time.
 
-3. **Updating the profile and reflecting the new values**  
+3. **Updating the profile and reflecting the new values**
+
    Getting the profile page to reflect updated data after a user makes changes was tricky. The image or bio wouldn't always update properly, so we had to ensure the latest values from the database were being correctly passed and rendered on the page.
 
-4. **Displaying the uploaded image using JavaScript**  
+4. **Displaying the uploaded image using JavaScript**
+
    We also faced difficulty showing a preview of the uploaded image immediately when a user selected a new file. We had to learn how to use JavaScript to generate the preview before submission and how to correctly display the saved image afterward using the proper file path.
 
 ## **🐞 Unsolved Problems**
