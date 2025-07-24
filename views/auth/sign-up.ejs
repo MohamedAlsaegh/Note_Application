@@ -3,25 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <title>NoteMind | Sign Up</title>
+
+    <!-- Bootstrap CSS for styling -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
   </head>
   <body class="bg-light">
+    <!-- Shared navbar partial for consistent layout -->
     <%- include('../partials/navbar.ejs') %>
 
     <div class="container mt-5">
       <div class="row justify-content-center">
         <div class="col-md-6">
+          <!-- Sign-up form card layout -->
           <div class="card shadow p-4">
             <h2 class="text-center mb-4">Sign Up</h2>
 
+            <!-- Sign-up form with multipart encoding for image upload -->
             <form
               action="/auth/sign-up"
               method="POST"
               enctype="multipart/form-data"
             >
+              <!-- Username input -->
               <div class="mb-3">
                 <label for="username" class="form-label">Username</label>
                 <input
@@ -34,6 +40,7 @@
                 />
               </div>
 
+              <!-- About input -->
               <div class="mb-3">
                 <label for="about" class="form-label">About You</label>
                 <input
@@ -45,6 +52,7 @@
                 />
               </div>
 
+              <!-- Password input -->
               <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
                 <input
@@ -56,6 +64,7 @@
                 />
               </div>
 
+              <!-- Confirm password input -->
               <div class="mb-3">
                 <label for="confirmPassword" class="form-label"
                   >Confirm Password</label
@@ -69,6 +78,7 @@
                 />
               </div>
 
+              <!-- Profile image file input -->
               <div class="mb-3">
                 <label for="imageInput" class="form-label"
                   >Upload Profile Picture</label
@@ -82,6 +92,7 @@
                 />
               </div>
 
+              <!-- Preview container for image -->
               <div class="mb-3 text-center">
                 <img
                   id="imagePreview"
@@ -92,6 +103,7 @@
                 />
               </div>
 
+              <!-- Submit button -->
               <button type="submit" class="btn btn-success w-100">
                 Sign Up
               </button>
@@ -100,9 +112,11 @@
         </div>
       </div>
     </div>
+
+    <!-- Bootstrap JS bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Image Preview Script -->
+    <!-- Script for live image preview -->
     <script>
       const imageInput = document.getElementById('imageInput')
       const imagePreview = document.getElementById('imagePreview')
