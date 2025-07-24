@@ -26,13 +26,12 @@ const getUserById = async (req, res) => {
 }
 
 const updateUserData = async (req, res) => {
-if(req.file){
-  
-  req.body.image=req.file.filename
-}
-  await User.findByIdAndUpdate(req.params.userId,req.body)
-      res.redirect(`/users/${req.params.userId}`)
-
+  if (req.file) {
+    // realtes to the multer
+    req.body.image = req.file.filename
+  }
+  await User.findByIdAndUpdate(req.params.userId, req.body)
+  res.redirect(`/users/${req.params.userId}`)
 }
 
 module.exports = {

@@ -71,10 +71,8 @@ const note_show_get = async (req, res) => {
 
     const taggedNotes = await Promise.all(
       allTags.map(async (tag) => {
-        const notes = await Note.find({
-          tag,
-          userId: req.session.user._id
-        })
+        // .map() is a used to Loop through each item in an array.
+        const notes = await Note.find({ tag, userId: req.session.user._id })
         return { tag, notes }
       })
     )
