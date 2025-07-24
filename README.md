@@ -60,7 +60,7 @@ Follow these steps to start using **MindNote**:
 
 - **`Sessions`** & **`Authentication Middleware`** : Used for managing user login states and protecting restricted routes.
 
-- **`CSS`** : For styling and front-end user interface enhancements.<!-- this may be changed to Bootstrap -->
+- **`Bootstrap`** : For styling and front-end user interface enhancements.<!-- this may be changed to Bootstrap -->
 
 # **ERD**
 

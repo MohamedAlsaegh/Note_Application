@@ -42,6 +42,7 @@ const updateUserData = async (req, res) => {
   await User.findByIdAndUpdate(req.params.userId, req.body)
 
   // Redirect back to the updated user profile page
+
   res.redirect(`/users/${req.params.userId}`)
 }
 
