@@ -4,18 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>NoteMind | Edit Note</title>
+
+  <!-- Bootstrap CSS for styling -->
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
     rel="stylesheet"
   />
 </head>
 <body>
+  <!-- Include shared navbar partial -->
   <%- include('../partials/navbar') %>
 
   <div class="container py-5">
     <h2 class="mb-4">Edit Your Note</h2>
 
+    <!-- Edit form using method-override to allow PUT -->
     <form action="/notes/<%= note._id %>?_method=PUT" method="POST" class="mb-4">
+      
+      <!-- Title input field pre-filled with existing note title -->
       <div class="mb-3">
         <label for="title" class="form-label">Title</label>
         <input
@@ -29,6 +35,7 @@
         />
       </div>
 
+      <!-- Content textarea with existing content rendered inside -->
       <div class="mb-3">
         <label for="content" class="form-label">Content</label>
         <textarea
@@ -41,6 +48,7 @@
         ><%= note.content %></textarea>
       </div>
 
+      <!-- Tag selector: populates options from allTags and selects current note tag -->
       <div class="row align-items-center mb-3">
         <div class="col-md-6">
           <label for="tag" class="form-label">Tag</label>
@@ -58,6 +66,7 @@
           </select>
         </div>
 
+        <!-- Completed checkbox: checked if note.isCompleted is true -->
         <div class="col-md-6 d-flex align-items-center mt-3 mt-md-0">
           <input
             type="checkbox"
@@ -71,14 +80,17 @@
         </div>
       </div>
 
+      <!-- Hidden input to preserve the note's user ID -->
       <input type="hidden" name="userId" value="<%= note.userId %>" />
 
+      <!-- Buttons for submitting update or canceling -->
       <div class="d-flex gap-3">
         <button type="submit" class="btn btn-success">💾 Save Changes</button>
         <a href="/notes/show" class="btn btn-secondary">Cancel</a>
       </div>
     </form>
 
+    <!-- Separate form to delete the note using method-override to allow DELETE -->
     <form
       action="/notes/<%= note._id %>?_method=DELETE"
       method="POST"
@@ -90,9 +102,9 @@
     </form>
   </div>
 
+  <!-- Bootstrap JavaScript bundle -->
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
   ></script>
 </body>
 </html>
-
