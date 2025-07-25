@@ -173,6 +173,38 @@ Features include:
 
 This page allows users to personalize and maintain their profile as needed.
 
+## **🖥️ ScreenShots For the application**
+
+### Home Page
+
+![Smile](images/ScreenshotHome.png)
+The landing page introduces **NoteMind** and highlights its key features. Users are welcomed with a friendly message and invited to sign in or create an account. The page outlines what they can do in the app - create, edit, delete, and tag notes, and manage their profile. It’s the starting point for a more organized mind.
+
+### SignUp Page
+
+![Smile](images/ScreenshotSignUp.png)
+New users can create an account by providing a username, short bio, password, and uploading a profile image.
+
+### LogIn Page
+
+![Smile](images/ScreenshotSignIn.png)
+Registered users can log in using their username and password to access their personal notes.
+
+### Note Page
+
+![Smile](images/ScreenshotNote.png)
+This page allows users to view, edit, save the content of an individual note, and marke as completed.
+
+### All Notes Page
+
+![Smile](images/ScreenshotAllnote.png)
+Users can view all their notes organized by tags, create new notes, and manage existing ones.
+
+### Profile Page
+
+![Smile](images/ScreenshotProfile.png)
+Users can view and update their personal information, including their about, profile image, and username.
+
 ## **🧩 Challenges Faced**
 
 ### Mohamed challenges
