@@ -20,12 +20,15 @@ Whether you're jotting down quick reminders, organizing tasks, or planning long-
   - [Entities](#entities)
   - [Relationship](#relationship)
 - [🖼️ Wireframes](#wireframe)
+
   - [The Home Page](#the-home-page)
   - [The SignUp Page](#the-signup-page)
   - [The LogIn Page](#the-login-page)
   - [The Note Page](#the-note-page)
   - [All Notes Page](#all-notes-page)
   - [The Profile Page](#the-profile-page)
+
+- [🖥️ ScreenShots For the Application](#screenshots-for-the-application)
 - [🧩 Challenges Faced](#-challenges-faced)
 - [🐞 Unsolved Problems](#-unsolved-problems)
 - [✨ Possible Future Enhancements](#-possible-future-enhancements)
